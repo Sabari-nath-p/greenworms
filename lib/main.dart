@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
+import 'package:greenworms/Screen/LoginScreen/LoginScreen.dart';
 import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
 import 'package:sizer/sizer.dart';
 
@@ -12,7 +13,7 @@ class GreenWorms extends StatelessWidget {
   Widget build(BuildContext context) {
     return Sizer(builder: (context, or, fl) {
       return GetMaterialApp(
-        home: homeScreen(),
+        home: LoginScreen(),
       );
     });
   }
