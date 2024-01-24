@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:sizer/sizer.dart';
 
 class HMTCard extends StatelessWidget {
   const HMTCard({super.key});
@@ -7,8 +8,14 @@ class HMTCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       color: Colors.white,
-      height: 200,
-      width: 100,
+      height: 14.11.h,
+      width: 40.w,
+    
     );
   }
 }
+
+
+
+
+    
