@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/Component/StatusBar.dart';
 import 'package:sizer/sizer.dart';
@@ -12,7 +13,8 @@ class JobScreen extends StatelessWidget {
         child: Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: [StatusBar(),
+          children: [
+            StatusBar(),
           SizedBox(height: 2.8.h,),
           Padding(
             padding: EdgeInsets.only(left: 2.w),

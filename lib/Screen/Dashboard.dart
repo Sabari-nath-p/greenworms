@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/JobScreen.dart';
+import 'package:greenworms/Screen/ProfileScreen/ProfileScreen.dart';
 import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
 import 'package:sizer/sizer.dart';
 
@@ -21,8 +22,10 @@ class _DashboardState extends State<Dashboard> {
         children: [
           if (indexNum == 0)
             Expanded(child: HomeScreen())
-          else
+          else if(indexNum ==1)
             Expanded(child: JobScreen())
+            else 
+            Expanded(child: ProfileScreen())
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

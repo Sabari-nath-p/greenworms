@@ -4,9 +4,11 @@ import 'package:sizer/sizer.dart';
 
 class StatusBar extends StatelessWidget {
   const StatusBar({super.key});
- List se
+ 
   @override
+  
   Widget build(BuildContext context) {
+    
     return Row(
      
       children: [
