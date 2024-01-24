@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
 import 'package:greenworms/Screen/homeScreen/components/HPrimaryCard.dart';
+import 'package:sizer/sizer.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -12,22 +13,22 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   int indexNum = 0;
-  List tabWidgets =[
+  List tabWidgets = [
     Text(
       "Home",
-      style: TextStyle(fontSize:20),
+      style: TextStyle(fontSize: 20),
     ),
-     Text(
+    Text(
       "Job",
-      style: TextStyle(fontSize:20),
+      style: TextStyle(fontSize: 20),
     ),
-     Text(
+    Text(
       "Expense",
-      style: TextStyle(fontSize:20),
+      style: TextStyle(fontSize: 20),
     ),
-     Text(
+    Text(
       "Profile",
-      style: TextStyle(fontSize:20),
+      style: TextStyle(fontSize: 20),
     ),
   ];
   @override
@@ -39,46 +40,47 @@ class _HomeScreenState extends State<HomeScreen> {
           children: [InkWell(onTap: () {}, child: HPrimaryCard())],
         ),
       ),
-      bottomNavigationBar: BottomNavigationBar
-
-      (items:const [
-        BottomNavigationBarItem(
-          icon: ImageIcon(AssetImage("assets/image/home.png")),
-        label: "Home",
-        backgroundColor: Colors.white),
-        
-        BottomNavigationBarItem(
-          icon:ImageIcon(AssetImage("assets/image/jobbot.png")),
-          
-        label: "Job",
-        backgroundColor: Colors.white),
-        
-        BottomNavigationBarItem(
-          icon:ImageIcon(AssetImage("assets/image/expense.png")), 
-        label: "Expense",
-        backgroundColor: Colors.white),
-
-        BottomNavigationBarItem(
-          icon: ImageIcon(AssetImage("assets/image/profile.png")),
-        label: "Profile",
-        backgroundColor: Colors.white),
-        ],
-        iconSize:40,
-        selectedFontSize: 25,
-        showSelectedLabels: true,
-        showUnselectedLabels: true,
-        currentIndex: indexNum,
-        onTap: (int index){
-          setState((){
-            indexNum = index;
-          });
-
-        }
-        
-        
-        
-        ),
-       
+      bottomNavigationBar: BottomNavigationBar(
+          items: [
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/image/home.png",
+                height: 7.3.h,
+              ),
+              label: "Home",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/image/jobbot.png",
+                height: 7.3.h,
+              ),
+              label: "Job",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/image/expense.png",
+                height: 7.3.h,
+              ),
+              label: "Expense",
+            ),
+            BottomNavigationBarItem(
+              icon: Image.asset(
+                "assets/image/profilebot.png",
+                height: 7.3.h,
+              ),
+              label: "Profile",
+            ),
+          ],
+          iconSize: 40,
+          selectedFontSize: 10,
+          showSelectedLabels: false,
+          showUnselectedLabels: false,
+          currentIndex: indexNum,
+          onTap: (int index) {
+            setState(() {
+              indexNum = index;
+            });
+          }),
     ));
   }
 }
