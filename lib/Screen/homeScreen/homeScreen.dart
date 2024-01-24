@@ -15,8 +15,8 @@ class HomeScreen extends StatelessWidget {
         // HPrimaryCard(),
         Positioned(
           child: Container(
-            width: 100.w,
-            height: 212,
+            width: 98.68.w,
+            height: 25.76.h,
             decoration: BoxDecoration(
               color: Color.fromRGBO(2, 97, 99, 1),
             ),

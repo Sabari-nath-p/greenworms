@@ -97,24 +97,7 @@ class HPrimaryCard extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: 147,
-            left: 26,
-            child: Container(
-              width: 155,
-              height: 120,
-              decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(15),
-              ),
-              child: Image.asset(
-                'assets/image/card.png',
-                width: 154,
-                height: 119,
-                fit: BoxFit.contain,
-              ),
-            ),
-          ),
+          
           Positioned(
             top: 147,
             left: 196,
