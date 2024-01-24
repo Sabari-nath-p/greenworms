@@ -9,6 +9,7 @@ class HMTCard extends StatelessWidget {
       color: Colors.white,
       height: 200,
       width: 100,
+      decoration: BoxDecoration(image: DecorationImage(image: AssetImage(""))),
     );
   }
 }
