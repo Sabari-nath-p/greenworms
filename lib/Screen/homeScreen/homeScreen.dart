@@ -4,6 +4,7 @@ import 'package:get/route_manager.dart';
 import 'package:greenworms/Screen/homeScreen/components/HMTcard.dart';
 import 'package:greenworms/Screen/homeScreen/components/HMTitle.dart';
 import 'package:greenworms/Screen/homeScreen/components/HPrimaryCard.dart';
+import 'package:greenworms/Screen/homeScreen/components/JobListCard.dart';
 import 'package:sizer/sizer.dart';
 
 class HomeScreen extends StatefulWidget {
@@ -51,7 +52,8 @@ class _HomeScreenState extends State<HomeScreen> {
               ),
             ),
             Positioned(left: 6.8.w, top: 17.41.h, child: HMTCard()),
-            Positioned(left: 2.7.w, right: 2.7.w, top: 7.6.h, child: HMTitle())
+            Positioned(left: 2.7.w, right: 2.7.w, top: 7.6.h, child: HMTitle()),
+            Positioned(child: JobListCard()),
           ],
         ),
       ),
