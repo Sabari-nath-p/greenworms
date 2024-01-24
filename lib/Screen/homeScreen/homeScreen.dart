@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/instance_manager.dart';
 import 'package:get/route_manager.dart';
+import 'package:greenworms/Screen/homeScreen/components/HMTcard.dart';
+import 'package:greenworms/Screen/homeScreen/components/HMTitle.dart';
 import 'package:greenworms/Screen/homeScreen/components/HPrimaryCard.dart';
 import 'package:sizer/sizer.dart';
 
@@ -36,8 +38,21 @@ class _HomeScreenState extends State<HomeScreen> {
     return SafeArea(
         child: Scaffold(
       body: SingleChildScrollView(
-        child: Column(
-          children: [InkWell(onTap: () {}, child: HPrimaryCard())],
+        child: Stack(
+          children: [
+            // HPrimaryCard(),
+            Positioned(
+              child: Container(
+                width: 100.w,
+                height: 212,
+                decoration: BoxDecoration(
+                  color: Color.fromRGBO(2, 97, 99, 1),
+                ),
+              ),
+            ),
+            Positioned(left: 6.8.w, top: 17.41.h, child: HMTCard()),
+            Positioned(left: 2.7.w, right: 2.7.w, top: 7.6.h, child: HMTitle())
+          ],
         ),
       ),
       bottomNavigationBar: BottomNavigationBar(

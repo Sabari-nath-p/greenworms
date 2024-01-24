@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenworms/Screen/homeScreen/components/HMTcard.dart';
 import 'package:sizer/sizer.dart';
 
 class HPrimaryCard extends StatelessWidget {
@@ -14,12 +15,22 @@ class HPrimaryCard extends StatelessWidget {
       child: Stack(
         children: [
           Positioned(
+            height: 13.17.h,
+            width: 100.w,
             child: Container(
               width: 100.w,
               height: 212,
               decoration: BoxDecoration(
                 color: Color.fromRGBO(2, 97, 99, 1),
               ),
+            ),
+          ),
+          Positioned(
+            top: 13.17.h,
+            // bottom: 0,
+            width: 100.w,
+            child: Container(
+              color: Colors.white,
             ),
           ),
           Positioned(
@@ -42,45 +53,15 @@ class HPrimaryCard extends StatelessWidget {
               ),
             ),
           ),
-          Positioned(
-            top: 70,
-            left: 72,
-            child: Container(
-              width: 139,
-              height: 30,
-              child: Row(
-                children: [
-                  Text(
-                    'Hello',
-                    style: GoogleFonts.lexend(
-                      fontSize: 17,
-                      fontWeight: FontWeight.w400,
-                      color: Color.fromRGBO(255, 255, 255, 1),
-                      letterSpacing: 0,
-                    ),
-                  ),
-                  Text(
-                    'Anandu',
-                    style: GoogleFonts.lexend(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w400,
-                      color: Color.fromRGBO(255, 255, 255, 1),
-                      letterSpacing: 0,
-                    ),
-                  ),
-                  Text(
-                    ',',
-                    style: GoogleFonts.ubuntu(
-                      fontSize: 18,
-                      fontWeight: FontWeight.w700,
-                      color: Color.fromRGBO(255, 255, 255, 1),
-                      letterSpacing: 0,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ),
+          // Positioned(
+          //   top: 70,
+          //   left: 72,
+          //   child: Container(
+          //     width: 139,
+          //     height: 30,
+          //     child:
+          //   ),
+          // ),
           Positioned(
             top: 75,
             left: 328,
