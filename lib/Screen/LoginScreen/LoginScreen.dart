@@ -46,8 +46,9 @@ class LoginScreen extends StatelessWidget {
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          labelText: ("9048514599"),
-                          enabledBorder: OutlineInputBorder(
+                          isDense: true,
+                          hintText: ("Phone"),
+                          border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(0.9.h),
                             borderSide: BorderSide(
                                 color: Color(0xffD0D5DD), width: 0.15.h),
@@ -72,8 +73,9 @@ class LoginScreen extends StatelessWidget {
                       child: TextFormField(
                         keyboardType: TextInputType.emailAddress,
                         decoration: InputDecoration(
-                          labelText: ("***********"),
-                          enabledBorder: OutlineInputBorder(
+                          hintText: ("***********"),
+                          isDense: true,
+                          border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(0.9.h),
                             borderSide: BorderSide(
                                 color: Color(0xffD0D5DD), width: 0.15.h),
