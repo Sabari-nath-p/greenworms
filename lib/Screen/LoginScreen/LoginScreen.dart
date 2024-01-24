@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenworms/Screen/Dashboard.dart';
 import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
 import 'package:sizer/sizer.dart';
 
@@ -92,7 +93,7 @@ class LoginScreen extends StatelessWidget {
           Center(
             child: InkWell(
               onTap: () {
-                Get.to(() => HomeScreen(), transition: Transition.rightToLeft);
+                Get.to(() => Dashboard(), transition: Transition.rightToLeft);
               },
               child: Container(
                 width: 84.2.w,

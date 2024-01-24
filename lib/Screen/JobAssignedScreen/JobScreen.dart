@@ -10,7 +10,7 @@ class JobScreen extends StatelessWidget {
         child: Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: [StatusBar()],
+          children: [StatusBar(), Text("hello")],
         ),
       ),
     ));

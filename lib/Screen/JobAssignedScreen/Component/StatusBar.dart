@@ -5,6 +5,6 @@ class StatusBar extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Placeholder();
+    return Row();
   }
 }
