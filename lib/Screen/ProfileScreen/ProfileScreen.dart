@@ -32,7 +32,8 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             SizedBox(height: 6.h,),
             Container(
-              padding: EdgeInsets.fromLTRB(8.w, 2.w, 8.w, 0),
+               decoration: BoxDecoration(border: Border.all(color:Colors.black.withOpacity(0.003.w), )),
+              padding: EdgeInsets.fromLTRB(8.w, 4.w, 8.w, 0),
               child: Column(
                 children: [
                   Row(
@@ -42,19 +43,31 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Text("Anandu",style: GoogleFonts.lexend(fontSize: 12.sp,color: Color(0xff053532),fontWeight: FontWeight.w600),)
                     ],
                   ),
-                  SizedBox(height: 6.w,),
+                   SizedBox(height: 3.w,),
+                  Container(
+                    width: 100.w,
+                    height:0.01.h,
+                    color: Colors.black.withOpacity(0.2.w),
+                  ),
+                 SizedBox(height: 3.w,),
                    Row(
                     children: [
-                      Text("Mobile Number",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w500),),
+                      Text("Mobile Number",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w400),),
                       Expanded(child: Container()),
-                      Text("+91 9048514599",style: GoogleFonts.lexend(fontSize: 12.sp,color: Color(0xff053532),fontWeight: FontWeight.w600),)
+                      Text("+91 9048514599",style: GoogleFonts.lexend(fontSize: 12.sp,color: Color(0xff053532),fontWeight: FontWeight.w400),)
                     ],
-                  ),SizedBox(height: 6.w,),
+                  ),  SizedBox(height: 3.w,),
+                  Container(
+                    width: 100.w,
+                    height:0.01.h,
+                    color: Colors.black.withOpacity(0.2.w),
+                  ),
+                 SizedBox(height: 3.w,),
                    Row(
                     children: [
-                      Text("Email ID",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w500),),
+                      Text("Email ID",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w400),),
                       Expanded(child: Container()),
-                      Text("anandusuresh001@gnail.com",style: GoogleFonts.lexend(fontSize: 12.sp,color: Color(0xff053532),fontWeight: FontWeight.w600),),
+                      Text("anandusuresh001@gnail.com",style: GoogleFonts.lexend(fontSize: 12.sp,color: Color(0xff053532),fontWeight: FontWeight.w400),),
                       
                     ],
                   ),
@@ -64,9 +77,10 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       Icon(Icons.lock,size: 6.w,color: Color(0xff036163),),
                       SizedBox(width: 3.w,),
                       Text("Change Password",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w500),),
+                   
                     ],
-                   )
-                 
+                   ),
+                  SizedBox(height: 5.w,),
 
                 ],
               ),
