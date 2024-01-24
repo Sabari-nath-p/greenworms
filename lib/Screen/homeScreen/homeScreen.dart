@@ -24,8 +24,7 @@ class HomeScreen extends StatelessWidget {
         ),
         Positioned(left: 6.8.w, top: 17.41.h, child: HMTCard()),
         Positioned(left: 2.7.w, right: 2.7.w, top: 7.6.h, child: HMTitle()),
-        Positioned(
-            left: 20, right: 0, top: 212, height: 200, child: JobListCard()),
+        Positioned(left: 20, right: 0, top: 212, child: JobListCard()),
       ],
     );
   }
