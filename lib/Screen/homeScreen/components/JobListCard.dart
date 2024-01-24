@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
+import 'package:sizer/sizer.dart';
 
 class JobListCard extends StatelessWidget {
   const JobListCard({super.key});
@@ -7,7 +9,15 @@ class JobListCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [Text("Job List"), JobSheetCard()],
+      children: [
+        
+        Align(
+          alignment: Alignment.topLeft,
+          child: Padding(
+padding: EdgeInsets.fromLTRB(0.1.h, 10.h, 0, 0),
+           
+            child: Text("Job List",style: GoogleFonts.lexend(fontSize: 15.sp,color: Colors.black,fontWeight: FontWeight.w500),))), 
+            JobSheetCard()],
     );
   }
 }
