@@ -11,6 +11,7 @@ class LoginScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
         child: Scaffold(
+<<<<<<< HEAD
             body: SingleChildScrollView(
       child: Column(
         children: [
@@ -19,6 +20,17 @@ class LoginScreen extends StatelessWidget {
             height: 33.6.h,
             alignment: Alignment.bottomCenter,
             child: Image.asset("assets/images/logo.png"),
+=======
+      body: Center(
+        child: InkWell(
+          onTap: () {
+            Get.to(() => HomeScreen(), transition: Transition.rightToLeft);
+          },
+          child: Container(
+            width: 100,
+            height: 100,
+            color: Colors.orange,
+>>>>>>> 2dae090 (changed)
           ),
           SizedBox(
             height: 8.h,

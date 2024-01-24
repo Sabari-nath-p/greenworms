@@ -4,14 +4,20 @@ import 'package:greenworms/Screen/LoginScreen/LoginScreen.dart';
 
 import 'package:sizer/sizer.dart';
 
+<<<<<<< HEAD
 void main(
 
 ) {
   runApp(GreenWorms());
+=======
+void main() {
+runApp (GreenWorms());
+>>>>>>> 2dae090 (changed)
 }
 
 class GreenWorms extends StatelessWidget {
   const GreenWorms({super.key});
+  
 
   @override
   Widget build(BuildContext context) {
