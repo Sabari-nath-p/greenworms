@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
+import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
 import 'package:greenworms/main.dart';
 import 'package:http/http.dart';
 
@@ -23,6 +24,7 @@ class LoginController extends GetxController {
     print(Response.statusCode);
 
     if (Response.statusCode == 201) {
+      Get.to(()=>HomeScreen());
     } else {
       Fluttertoast.showToast(msg: "Invalid crentials");
     }
