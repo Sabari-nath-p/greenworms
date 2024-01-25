@@ -15,80 +15,143 @@ class _ProfileScreenState extends State<ProfileScreen> {
     return SafeArea(
       child: Scaffold(
         body: Column(
-          
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            SizedBox(height: 6.h,),
-            Align(
-             alignment: Alignment.center,
-              child: ClipOval(
-                      child: Image.asset(
-              'assets/image/profile.png',
-              width: 10.h,
-              height: 10.h,
-              fit: BoxFit.cover,
-                      ),
-                    ),
+            SizedBox(
+              height: 6.h,
             ),
-            SizedBox(height: 6.h,),
+            Align(
+              alignment: Alignment.center,
+              child: ClipOval(
+                child: Image.asset(
+                  'assets/image/profile.png',
+                  width: 10.h,
+                  height: 10.h,
+                  fit: BoxFit.cover,
+                ),
+              ),
+            ),
+            SizedBox(
+              height: 6.h,
+            ),
             Container(
-               decoration: BoxDecoration(border: Border.all(color:Colors.black.withOpacity(0.003.w), )),
+              decoration: BoxDecoration(
+                  border: Border.all(
+                color: Colors.black.withOpacity(0.3),
+              )),
               padding: EdgeInsets.fromLTRB(8.w, 4.w, 8.w, 0),
               child: Column(
                 children: [
                   Row(
                     children: [
-                      Text("Name",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w500),),
+                      Text(
+                        "Name",
+                        style: GoogleFonts.lexend(
+                            fontSize: 11.sp,
+                            color: Color(0xff036163),
+                            fontWeight: FontWeight.w500),
+                      ),
                       Expanded(child: Container()),
-                      Text("Anandu",style: GoogleFonts.lexend(fontSize: 12.sp,color: Color(0xff053532),fontWeight: FontWeight.w600),)
+                      Text(
+                        "Anandu",
+                        style: GoogleFonts.lexend(
+                            fontSize: 12.sp,
+                            color: Color(0xff053532),
+                            fontWeight: FontWeight.w600),
+                      )
                     ],
                   ),
-                   SizedBox(height: 3.w,),
+                  SizedBox(
+                    height: 3.w,
+                  ),
                   Container(
                     width: 100.w,
-                    height:0.01.h,
+                    height: 0.01.h,
                     color: Colors.black.withOpacity(0.2.w),
                   ),
-                 SizedBox(height: 3.w,),
-                   Row(
+                  SizedBox(
+                    height: 3.w,
+                  ),
+                  Row(
                     children: [
-                      Text("Mobile Number",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w400),),
+                      Text(
+                        "Mobile Number",
+                        style: GoogleFonts.lexend(
+                            fontSize: 11.sp,
+                            color: Color(0xff036163),
+                            fontWeight: FontWeight.w400),
+                      ),
                       Expanded(child: Container()),
-                      Text("+91 9048514599",style: GoogleFonts.lexend(fontSize: 12.sp,color: Color(0xff053532),fontWeight: FontWeight.w400),)
+                      Text(
+                        "+91 9048514599",
+                        style: GoogleFonts.lexend(
+                            fontSize: 12.sp,
+                            color: Color(0xff053532),
+                            fontWeight: FontWeight.w400),
+                      )
                     ],
-                  ),  SizedBox(height: 3.w,),
+                  ),
+                  SizedBox(
+                    height: 3.w,
+                  ),
                   Container(
                     width: 100.w,
-                    height:0.01.h,
+                    height: 0.01.h,
                     color: Colors.black.withOpacity(0.2.w),
                   ),
-                 SizedBox(height: 3.w,),
-                   Row(
+                  SizedBox(
+                    height: 3.w,
+                  ),
+                  Row(
                     children: [
-                      Text("Email ID",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w400),),
+                      Text(
+                        "Email ID",
+                        style: GoogleFonts.lexend(
+                            fontSize: 11.sp,
+                            color: Color(0xff036163),
+                            fontWeight: FontWeight.w400),
+                      ),
                       Expanded(child: Container()),
-                      Text("anandusuresh001@gnail.com",style: GoogleFonts.lexend(fontSize: 12.sp,color: Color(0xff053532),fontWeight: FontWeight.w400),),
-                      
+                      Text(
+                        "anandusuresh001@gnail.com",
+                        style: GoogleFonts.lexend(
+                            fontSize: 12.sp,
+                            color: Color(0xff053532),
+                            fontWeight: FontWeight.w400),
+                      ),
                     ],
                   ),
-                   SizedBox(height: 14.w,),
-                   Row(
+                  SizedBox(
+                    height: 14.w,
+                  ),
+                  Row(
                     children: [
-                      Icon(Icons.lock,size: 6.w,color: Color(0xff036163),),
-                      SizedBox(width: 3.w,),
-                      Text("Change Password",style: GoogleFonts.lexend(fontSize: 11.sp,color: Color(0xff036163),fontWeight: FontWeight.w500),),
-                   
+                      Icon(
+                        Icons.lock,
+                        size: 6.w,
+                        color: Color(0xff036163),
+                      ),
+                      SizedBox(
+                        width: 3.w,
+                      ),
+                      Text(
+                        "Change Password",
+                        style: GoogleFonts.lexend(
+                            fontSize: 11.sp,
+                            color: Color(0xff036163),
+                            fontWeight: FontWeight.w500),
+                      ),
                     ],
-                   ),
-                  SizedBox(height: 5.w,),
-
+                  ),
+                  SizedBox(
+                    height: 5.w,
+                  ),
                 ],
               ),
             )
           ],
         ),
       ),
-
     );
   }
 }

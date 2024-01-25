@@ -4,6 +4,7 @@ import 'package:greenworms/Screen/LoginScreen/LoginScreen.dart';
 
 import 'package:sizer/sizer.dart';
 
+String baseUrl = "https://api.greenworms.alpha.logidots.com/api/";
 void main() {
   runApp(GreenWorms());
 }
