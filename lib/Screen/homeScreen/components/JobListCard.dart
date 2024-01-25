@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
+import 'package:greenworms/Screen/weightScreen/weightScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class JobListCard extends StatelessWidget {
@@ -22,8 +24,12 @@ class JobListCard extends StatelessWidget {
                       fontWeight: FontWeight.w500),
                 ))),
                 SizedBox(height: 4.h,),
-        JobSheetCard(
-          JobStatus: 0,
+        InkWell(onTap: (){
+          Get.to(()=>weightScreen());
+        },
+          child: JobSheetCard(
+            JobStatus: 0,
+          ),
         )
       ],
     );
