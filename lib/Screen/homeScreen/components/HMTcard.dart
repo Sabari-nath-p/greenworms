@@ -68,20 +68,96 @@ class HMTCard extends StatelessWidget {
         Positioned(
           top: 0.82.h,
           left: 23.6.w,
-          child: Padding(
-    padding: EdgeInsets.fromLTRB(1.31.w, 0.0, 1.31.w, 0.0),
+          
           child: Container(
             width: 15.26.w,
             height: 2.82.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4.69),
+              borderRadius: BorderRadius.circular(4.69.w),
               color: Color.fromRGBO(228, 252, 243, 1),
 ), 
+             child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.fromLTRB(2.36.w, .54.h, 0, 0),
+                    width: 3.w,
+                    height: 3.h,
+                    decoration: BoxDecoration(
+                      
+                    ),
+                    child: Image.asset('assets/image/arrow.png'),
+                  ),
+                  
+                ],
+                ),
+              
+            ),
+          ),
+          Positioned(
+          top: 1.41.h,
+          left: 30.52.w,
+          child: Container(
+            width: 6.84.w,
+            height: 1.70.h,
+            child: Text(
+              '6',
+              style: TextStyle(
+                fontFamily: 'Lexend',
+                fontSize: 9.12.sp,
+                fontWeight: FontWeight.w400,
+                
+                letterSpacing: -0.02,
+                
+                color: Color.fromRGBO(0, 168, 107, 1)
+              ),
             ),
           ),
         ),
         
+        Positioned(
+          top: 1.41.h,
+          left:32.5.w,
+          child: Container(
+            width: 6.84.w,
+            height: 1.70.h,
+            child: Text(
+              '.5',
+              style: TextStyle(
+                fontFamily: 'Lexend',
+                fontSize: 9.12.sp,
+                fontWeight: FontWeight.w400,
+               
+                letterSpacing: -0.02,
+       
+                color: Color.fromRGBO(0, 168, 107, 1)
+              ),
+            ),
+          ),
+        ),
+        
+        Positioned(
+          top: 1.41.h,
+          left :35.35.w,
+          
+          child: Container(
+            width: 6.84.w,
+            height: 1.70.h,
+            child: Text(
+              '%',
+              style: TextStyle(
+                fontFamily: 'Gilroy',
+                fontSize: 9.12.sp,
+                
+                letterSpacing: -0.02,
+                
+                color: Color.fromRGBO(0, 168, 107, 1)
+              ),
+            ),
+          ),
+        ),
       ],
     );
   }
 }
+         
+                

@@ -8,7 +8,9 @@ class HMTsmall
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return Stack(
+      children: [
+      Container(
        decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(3.94.w),
         
@@ -16,7 +18,8 @@ class HMTsmall
       ),
       height: 14.11.h,
       width: 40.78. w,
-      child: Column(
+      ),
+      Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
       Container(
@@ -62,9 +65,106 @@ class HMTsmall
               ),
             ),
           ),
+
         ],
     ),
+
+
+    Positioned(
+          top: 0.82.h,
+          left: 23.6.w,
+          
+          child: Container(
+            width: 15.26.w,
+            height: 2.82.h,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(4.69.w),
+             color: Color.fromRGBO(255, 243, 243, 1),
+
+), 
+             child: Row(
+                children: [
+                  Container(
+                    margin: EdgeInsets.fromLTRB(1.6.w, .54.h, 0, 0),
+                    width: 3.w,
+                    height: 3.h,
+                    decoration: BoxDecoration(
+                      
+                    ),
+                    child: Image.asset('assets/image/down.png'),
+                  ),
+                  
+                ],
+                ),
+              
+            ),
+          ),
+          Positioned(
+          top: 1.25.h,
+          left: 28.85.w,
+          child: Container(
+            width: 6.84.w,
+            height: 1.70.h,
+            child: Text(
+              '16',
+              style: TextStyle(
+                fontFamily: 'Lexend',
+                fontSize: 9.12.sp,
+                fontWeight: FontWeight.w400,
+                
+                letterSpacing: -0.02,
+                
+                color: Color.fromRGBO(255, 81, 81, 1),
+              ),
+            ),
+          ),
+        ),
+        
+        Positioned(
+          top: 1.25.h,
+          left:32.5.w,
+          child: Container(
+            width: 6.84.w,
+            height: 1.70.h,
+            child: Text(
+              '.5',
+              style: TextStyle(
+                fontFamily: 'Lexend',
+                fontSize: 9.12.sp,
+                fontWeight: FontWeight.w400,
+               
+                letterSpacing: -0.02,
+       
+                color: Color.fromRGBO(255, 81, 81, 1),
+              ),
+            ),
+          ),
+        ),
+        
+        Positioned(
+          top: 1.25.h,
+          left :35.5.w,
+          
+          child: Container(
+            width: 6.84.w,
+            height: 1.70.h,
+            child: Text(
+              '%',
+              style: TextStyle(
+                fontFamily: 'Gilroy',
+                fontSize: 9.12.sp,
+                
+                letterSpacing: -0.02,
+                
+                color: Color.fromRGBO(255, 81, 81, 1),
+)
+              ),
+            ),
+          ),
+        
+      ],
     );
-    
   }
 }
+
+    
