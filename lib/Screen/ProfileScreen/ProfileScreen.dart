@@ -37,7 +37,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Container(
               decoration: BoxDecoration(
                   border: Border.all(
-                color: Colors.black.withOpacity(0.3),
+                color: Colors.black.withOpacity(0.09),
               )),
               padding: EdgeInsets.fromLTRB(8.w, 4.w, 8.w, 0),
               child: Column(
