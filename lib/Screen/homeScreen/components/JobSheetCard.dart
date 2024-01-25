@@ -56,8 +56,8 @@ class JobSheetCard extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                    width: 1.9.h,
-                    height: 1.9.h,
+                    width: 1.7.h,
+                    height: 1.7.h,
                     child: Image.asset("assets/images/jobid.png")),
                 SizedBox(
                   width: 2.w,
@@ -98,8 +98,8 @@ class JobSheetCard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 SizedBox(
-                    width: 1.9.h,
-                    height: 1.9.h,
+                    width: 1.7.h,
+                    height: 1.7.h,
                     child: Image.asset("assets/images/jobid.png")),
                 SizedBox(
                   width: 2.w,
@@ -140,8 +140,8 @@ class JobSheetCard extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                    width: 1.9.h,
-                    height: 1.9.h,
+                    width: 1.7.h,
+                    height: 1.7.h,
                     child: Image.asset("assets/images/item.png")),
                 SizedBox(
                   width: 2.w,
@@ -183,8 +183,8 @@ class JobSheetCard extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                    width: 1.5.h,
-                    height: 1.5.h,
+                    width: 1.7.h,
+                    height: 1.7.h,
                     child: Image.asset("assets/images/quantity.png")),
                 SizedBox(
                   width: 2.w,
@@ -224,9 +224,9 @@ class JobSheetCard extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                    width: 1.9.h,
-                    height: 1.9.h,
-                    child: Image.asset("assets/images/loc.png")),
+                    width: 1.7.h,
+                    height: 1.7.h,
+                    child: Image.asset("assets/images/marker.png")),
                 SizedBox(
                   width: 3.w,
                 ),
