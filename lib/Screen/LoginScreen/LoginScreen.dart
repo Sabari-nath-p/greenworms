@@ -49,8 +49,10 @@ class LoginScreen extends StatelessWidget {
                         child: TextFormField(
                           controller: authCtrl.emailController,
                           keyboardType: TextInputType.emailAddress,
+                           textAlignVertical: TextAlignVertical.center,
                           decoration: InputDecoration(
                             isDense: true,
+                           
                             hintText: ("Phone"),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(0.9.h),
@@ -77,9 +79,11 @@ class LoginScreen extends StatelessWidget {
                         child: TextFormField(
                           controller: authCtrl.passwordController,
                           keyboardType: TextInputType.visiblePassword,
+                           textAlignVertical: TextAlignVertical.center,
                           decoration: InputDecoration(
                             hintText: ("***********"),
                             isDense: true,
+                             
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(0.9.h),
                               borderSide: BorderSide(
