@@ -12,14 +12,47 @@ class JobSheetCard extends StatelessWidget {
       width: 91.w,
       decoration: BoxDecoration(
           border: Border.all(
-            color: Colors.black.withOpacity(0.2.w),
+            color: Color(0xff007C58).withOpacity(0.02.w),
+            
           ),
           borderRadius: BorderRadius.circular(0.9.h)),
       child: Padding(
-        padding: EdgeInsets.fromLTRB(4.17.w, 3.h, 0.w, 0.h),
-        child: Column(
+        padding: EdgeInsets.fromLTRB(4.17.w, 1.h, 0.w, 0.h),
+        child: 
+        Column(
           children: [
-            if (JobStatus == 1) Container(),
+            if (JobStatus == 1) Align(
+              alignment: Alignment.topLeft,
+              child: Container(
+                width:24.47.w ,
+                height:2.5.h ,
+                decoration: BoxDecoration(
+                            color: Color(0xff036163).withOpacity(0.2),
+                            borderRadius: BorderRadius.circular(5.8.h)) ,
+                            child: Row(
+                              children: [
+                                SizedBox(width: 2.w,),
+                                Container(
+                                  width: 1.5.h,
+                                  height: 1.5.h,
+                                  decoration:BoxDecoration(
+                            color: Color(0xff036163),
+                            borderRadius: BorderRadius.circular(25.h))  ,
+                                ),
+                                SizedBox(width: 1.w,),
+                                SizedBox(
+                                  width:17.w ,
+                                  child: Text("In Progress",
+                                                          style: GoogleFonts.lexend(
+                                                              fontSize: 8.33.sp,
+                                                              fontWeight: FontWeight.w500,
+                                                              color:Color(0xff036163) )),
+                                ),
+                              ],
+                            ),
+              ),
+            ),
+            SizedBox(height: 2.h,),
             Row(
               children: [
                 SizedBox(
@@ -29,16 +62,17 @@ class JobSheetCard extends StatelessWidget {
                 SizedBox(
                   width: 2.w,
                 ),
-                Text(
-                  "Job Id",
-                  style: GoogleFonts.lexend(
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff6A6A6A)),
-                ),
                 SizedBox(
-                  width: 35.w,
+                  width: 39.4.w,
+                  child: Text(
+                    "Job Id",
+                    style: GoogleFonts.lexend(
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff6A6A6A)),
+                  ),
                 ),
+              
                 Text(
                   "#001",
                   style: GoogleFonts.lexend(
@@ -70,16 +104,17 @@ class JobSheetCard extends StatelessWidget {
                 SizedBox(
                   width: 2.w,
                 ),
-                Text(
-                  "Pickup Date ",
-                  style: GoogleFonts.lexend(
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff6A6A6A)),
-                ),
                 SizedBox(
-                  width: 20.w,
+                  width: 39.4.w,
+                  child: Text(
+                    "Pickup Date ",
+                    style: GoogleFonts.lexend(
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff6A6A6A)),
+                  ),
                 ),
+               
                 Text(
                   "03-FEB-2024",
                   textAlign: TextAlign.end,
@@ -111,16 +146,19 @@ class JobSheetCard extends StatelessWidget {
                 SizedBox(
                   width: 2.w,
                 ),
-                Text(
-                  "Pickup Item",
-                  style: GoogleFonts.lexend(
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff6A6A6A)),
-                ),
                 SizedBox(
-                  width: 20.w,
+                   
+                  width:39.4 .w,
+                
+                  child: Text(
+                    "Pickup Item",
+                    style: GoogleFonts.lexend(
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff6A6A6A)),
+                  ),
                 ),
+                
                 Text(
                   "MIXED WASTE",
                   style: GoogleFonts.lexend(
@@ -151,16 +189,17 @@ class JobSheetCard extends StatelessWidget {
                 SizedBox(
                   width: 2.w,
                 ),
-                Text(
-                  "Approx Qty",
-                  style: GoogleFonts.lexend(
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff6A6A6A)),
-                ),
                 SizedBox(
-                  width: 20.w,
+                     width:39.4 .w,
+                  child: Text(
+                    "Approx Qty",
+                    style: GoogleFonts.lexend(
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff6A6A6A)),
+                  ),
                 ),
+               
                 Text(
                   "1000 KG",
                   style: GoogleFonts.lexend(
@@ -191,19 +230,20 @@ class JobSheetCard extends StatelessWidget {
                 SizedBox(
                   width: 3.w,
                 ),
-                Text(
-                  "location",
-                  style: GoogleFonts.lexend(
-                      fontSize: 11.sp,
-                      fontWeight: FontWeight.w600,
-                      color: Color(0xff6A6A6A)),
-                ),
                 SizedBox(
-                  width: 10.w,
+                     width:39.4 .w,
+                  child: Text(
+                    "location",
+                    style: GoogleFonts.lexend(
+                        fontSize: 11.sp,
+                        fontWeight: FontWeight.w600,
+                        color: Color(0xff6A6A6A)),
+                  ),
                 ),
+               
               ],
             ),
-            //aa
+            SizedBox(height: 1.h,),
             Container(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -256,7 +296,7 @@ class JobSheetCard extends StatelessWidget {
                 ],
               ),
             SizedBox(
-              height: 3,
+              height: 2.h,
             )
           ],
         ),

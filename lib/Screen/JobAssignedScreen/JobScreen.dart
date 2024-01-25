@@ -59,10 +59,10 @@ class JobScreen extends StatelessWidget {
               else if (jctrl.jStatus == 1)
                 JobSheetCard(
                   JobStatus: 1,
-                ),
-              SizedBox(
-                height: 2.8.h,
-              ),
+                )
+              else
+              JobSheetCard(JobStatus: 2)
+              
             ],
           ),
         );
