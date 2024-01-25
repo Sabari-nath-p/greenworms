@@ -66,17 +66,20 @@ class HMTCard extends StatelessWidget {
         ),
         
         Positioned(
-          top: 10.35,
-          left: 23.6,
+          top: 0.82.h,
+          left: 23.6.w,
+          child: Padding(
+    padding: EdgeInsets.fromLTRB(1.31.w, 0.0, 1.31.w, 0.0),
           child: Container(
             width: 15.26.w,
             height: 2.82.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4.62),
+              borderRadius: BorderRadius.circular(4.69.w),
               color: Color.fromRGBO(228, 252, 243, 1),
 ), 
             ),
           ),
+        ),
         
       ],
     );
