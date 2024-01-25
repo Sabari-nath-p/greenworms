@@ -10,14 +10,21 @@ class JobListCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        
         Align(
-          alignment: Alignment.topLeft,
-          child: Padding(
-padding: EdgeInsets.fromLTRB(0.1.h, 10.h, 0, 0),
-           
-            child: Text("Job List",style: GoogleFonts.lexend(fontSize: 15.sp,color: Colors.black,fontWeight: FontWeight.w500),))), 
-            JobSheetCard()],
+            alignment: Alignment.topLeft,
+            child: Padding(
+                padding: EdgeInsets.fromLTRB(0.1.h, 10.h, 0, 0),
+                child: Text(
+                  "Job List",
+                  style: GoogleFonts.lexend(
+                      fontSize: 15.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500),
+                ))),
+        JobSheetCard(
+          JobStatus: 0,
+        )
+      ],
     );
   }
 }
