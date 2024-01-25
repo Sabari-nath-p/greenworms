@@ -21,6 +21,7 @@ class JobListCard extends StatelessWidget {
                       color: Colors.black,
                       fontWeight: FontWeight.w500),
                 ))),
+                SizedBox(height: 4.h,),
         JobSheetCard(
           JobStatus: 0,
         )

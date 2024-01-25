@@ -183,8 +183,8 @@ class JobSheetCard extends StatelessWidget {
             Row(
               children: [
                 SizedBox(
-                    width: 1.9.h,
-                    height: 1.9.h,
+                    width: 1.5.h,
+                    height: 1.5.h,
                     child: Image.asset("assets/images/quantity.png")),
                 SizedBox(
                   width: 2.w,
