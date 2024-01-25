@@ -9,29 +9,26 @@ class weightScreen extends StatelessWidget {
     return Scaffold(
       body: SingleChildScrollView(
         child: Column(
-         
+         crossAxisAlignment: CrossAxisAlignment.start,
          children: [
-         
-            
             Container(
               width: 6.57.w, 
               height: 2.94.h, 
-              margin: EdgeInsets.only(
+             margin: EdgeInsets.only(
                 top: 8.5.h, 
-                
-                left: 5.2.w, 
-                bottom:88.82.h
+                 left: 5.2.w, 
               ),
               child: Image.asset('assets/image/angle.png'),
             ),
+            SizedBox(height: 2.h,),
             Container(
-              width: 8.57.w,
-              height:9.h,
+              width: 32.w,
+              height:3.h,
 
               margin: EdgeInsets.only(
-                bottom:84.11.h,
-                top: 5.2.h,
-                left: 8.4.w,
+                
+               
+                left: 7.4.w,
               ),
               child: Text(
                 'Enter Weight',

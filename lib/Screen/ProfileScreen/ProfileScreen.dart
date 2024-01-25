@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenworms/Screen/ProfileScreen/ChangePassword.dart';
+import 'package:http/http.dart';
 import 'package:sizer/sizer.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -134,12 +137,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
                       SizedBox(
                         width: 3.w,
                       ),
-                      Text(
-                        "Change Password",
-                        style: GoogleFonts.lexend(
-                            fontSize: 11.sp,
-                            color: Color(0xff036163),
-                            fontWeight: FontWeight.w500),
+                      InkWell(
+                        onTap: () {
+                          Get.to(()=> ChangePasswordScreen());
+                        },
+                        child: Text(
+                          "Change Password",
+                          style: GoogleFonts.lexend(
+                              fontSize: 11.sp,
+                              color: Color(0xff036163),
+                              fontWeight: FontWeight.w500),
+                        ),
                       ),
                     ],
                   ),
