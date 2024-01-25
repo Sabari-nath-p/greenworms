@@ -74,7 +74,7 @@ class HMTCard extends StatelessWidget {
             width: 15.26.w,
             height: 2.82.h,
             decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(4.69.w),
+              borderRadius: BorderRadius.circular(4.69),
               color: Color.fromRGBO(228, 252, 243, 1),
 ), 
             ),
