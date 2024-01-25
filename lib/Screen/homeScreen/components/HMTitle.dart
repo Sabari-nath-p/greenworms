@@ -9,7 +9,7 @@ class HMTitle extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start, 
-      crossAxisAlignment: CrossAxisAlignment.start, 
+      crossAxisAlignment: CrossAxisAlignment.center, 
       children: [
         ClipOval(
           child: Image.asset(
@@ -20,14 +20,8 @@ class HMTitle extends StatelessWidget {
           ),
         ),
         SizedBox(width: 2.36.w),
-      Container(
-          width: 36.58.w,
-          height: 3.52.h,
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              'Hello',
+      Text(
+              'Hello ' ,
               style: GoogleFonts.lexend(
                 fontSize: 15.sp,
                 fontWeight: FontWeight.w400,
@@ -47,9 +41,6 @@ class HMTitle extends StatelessWidget {
                 
               ),
             ),
-          ],
-        ),
-      ),
         Text(
           ',',
           style: GoogleFonts.ubuntu(
