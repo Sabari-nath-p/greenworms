@@ -47,34 +47,7 @@ class JobScreen extends StatelessWidget {
             SizedBox(
               height: 2.8.h,
             ),
-            Padding(
-              padding: EdgeInsets.only(left: 2.w),
-              child: SizedBox(
-                width: 92.05.w,
-                height: 5.8.h,
-                child: TextFormField(
-                  keyboardType: TextInputType.emailAddress,
-                  decoration: InputDecoration(
-                    prefixIcon: Icon(
-                      Icons.search,
-                      size: 5.6.w,
-                      color: Color(0xff036163),
-                    ),
-                    isDense: true,
-                    hintText: ("Search by Job Id"),
-                    hintStyle: GoogleFonts.lexend(
-                      color: Color(0xff036163),
-                    ),
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(0.9.h),
-                      borderSide: BorderSide(
-                          color: Color(0xff036163).withOpacity(.2),
-                          width: 0.15.h),
-                    ),
-                  ),
-                ),
-              ),
-            ),
+           
           ],
 
         ),

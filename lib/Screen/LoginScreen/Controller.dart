@@ -9,7 +9,7 @@ import 'package:greenworms/main.dart';
 import 'package:http/http.dart';
 
 class LoginController extends GetxController {
-  TextEditingController emailController = TextEditingController(text: "test@eamil.com");
+  TextEditingController emailController = TextEditingController(text: "test@gamil.com");
   TextEditingController passwordController = TextEditingController(text:"Password123@");
 
   loginSend() async {
