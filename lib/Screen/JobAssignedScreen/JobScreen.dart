@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/route_manager.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/Component/StatusBar.dart';
+import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
 import 'package:sizer/sizer.dart';
 
 class JobScreen extends StatelessWidget {
@@ -38,6 +39,8 @@ class JobScreen extends StatelessWidget {
                         ),
                       ),
           ),
+          SizedBox(height:2.5.h),
+          JobSheetCard()
           
            ],
         ),

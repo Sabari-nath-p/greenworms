@@ -113,7 +113,9 @@ class JobSheetCard extends StatelessWidget {
               child: Image.asset("assets/images/loc.png")),
               SizedBox(width: 2.w,),
               Text("location",style: GoogleFonts.lexend(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff6A6A6A) ),),
-                Text("Logidots Technoogies,Atomic Building Kazhakootam Tvm",textAlign: TextAlign.start,style: GoogleFonts.lexend(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff000000) ),),
+                SizedBox
+                (
+                  child: Text("Logidots Technoogies,Atomic Building Kazhakootam Tvm",textAlign: TextAlign.start,style: GoogleFonts.lexend(fontSize:12.sp,fontWeight: FontWeight.w600,color: Color(0xff000000) ),)),
             
               
           ],
