@@ -151,6 +151,8 @@ class JobSheetCard extends StatelessWidget {
           Padding(
             padding: EdgeInsets.fromLTRB(4.17.w, 1.h, 0.w, 0.h),
             child: Row(
+              
+              
               children: [
                 SizedBox(
                     width: 1.9.h,
