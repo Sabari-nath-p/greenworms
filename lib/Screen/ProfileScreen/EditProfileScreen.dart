@@ -118,7 +118,7 @@ class _EditProfileScreenState extends State<EditProfileScreen> {
                              textAlignVertical: TextAlignVertical.center,
                             decoration: InputDecoration(
                               isDense: true,
-                             
+                            
                               hintText: ("anandhusuresh001@gmail.com"),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(0.9.h),
