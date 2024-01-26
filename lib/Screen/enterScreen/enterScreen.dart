@@ -1,17 +1,22 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:greenworms/Screen/weightScreen/controller.dart';
+import 'package:greenworms/Screen/collectionScreen/collectionScreen.dart';
+import 'package:greenworms/Screen/enterScreen/controller.dart';
+import 'package:greenworms/Screen/stageScreen/controller.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
 
-class weightScreen extends StatelessWidget {
-   weightScreen({super.key});
-stageController sctrl = Get.put(stageController());
+import '../materialScreen/materialScreen.dart';
+
+class enterScreen extends StatelessWidget {
+   enterScreen({super.key});
+enterController sctrl = Get.put(enterController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GetBuilder<stageController>(
+      body: GetBuilder<enterController>(
         builder: (_) {
+          var ectrl;
           return SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -115,12 +120,12 @@ stageController sctrl = Get.put(stageController());
                         letterSpacing: -0.01.w),
                   ),
                 ),
-                SizedBox(height: 2.5.h),
+                SizedBox(height: 2.h),
                 Container(
                   width: 84.21.w,
                   height: 6.h,
                   alignment: Alignment.centerLeft,
-                  margin: EdgeInsets.only(left: 7.12.w),
+                  margin: EdgeInsets.only(left: 7.14.w),
                   padding: EdgeInsets.only(left: 10),
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(2.66.w),
@@ -154,10 +159,10 @@ stageController sctrl = Get.put(stageController());
                   width: 55.52.w,
                   height: 3.h,
                   margin: EdgeInsets.only(
-                    left: 7.4.w,
+                    left: 7.14.w,
                   ),
                   child: Text(
-                    'ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക ',
+                    ' ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക ',
                     style: TextStyle(
                         fontFamily: 'Lexend',
                         fontSize: 10.88.sp,
@@ -166,46 +171,46 @@ stageController sctrl = Get.put(stageController());
                         letterSpacing: -0.01.w),
                   ),
                 ),
-                SizedBox(height: 2.58.h),
+                SizedBox(height: 2.h),
                 Container(
                   width: 83.68.w,
                   height: 12.82.h,
-                  margin: EdgeInsets.only(left: 7.4.w),
+                  margin: EdgeInsets.only(left: 5.5.w),
                   child: InkWell(
                       child: Image.asset('assets/image/upload.png'),
                       onTap: () async {
                         final ImagePicker picker = ImagePicker();
                         print("hello");
           
-                         sctrl.weightimage =
+                         ectrl.enterimage =
                             await picker.pickImage(source: ImageSource.camera);
-                            sctrl.update();
+                            ectrl.update();
                       })
-                ),SizedBox(height:2.6.h),
-                if(sctrl.weightimage!=null)
+                ),SizedBox(height:1.2.h),
+                if(ectrl.enterimage!=null)
                 Container(
                   width: 84.21.w,
                   height: 12.36.h,
                   margin: EdgeInsets.only(
                     
-                    left: 5.2.w,
+                    left: 7.14.w,
                   ),
                   child: Image.asset('assets/image/imagecard.png'),
                 ),
-                SizedBox(height: 23.94.h),
+                SizedBox(height: 12.5.h),
                 Container(
-                  width: 84.21.w,
+                  width: 80.21.w,
                   height: 5.17.h,
                   margin: EdgeInsets.only(left: 7.36.w),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {Get.to(materialScreen());},
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(3, 97, 99, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(2.10.w),
                         side: BorderSide(
                           width: 0.50.w,
-                          color: Color.fromRGBO(127, 86, 217, 1),
+                          color: Color.fromRGBO(3, 97, 99, 1),
                         ),
                       ),
                       shadowColor: Color.fromRGBO(16, 24, 40, 0.05),
@@ -221,6 +226,7 @@ stageController sctrl = Get.put(stageController());
                           color: Colors.white,
                         ),
                       ),
+                      
                     ),
                   ),
                 ),
