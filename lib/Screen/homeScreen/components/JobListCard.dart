@@ -2,12 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
+import 'package:greenworms/Screen/homeScreen/controller.dart';
 import 'package:greenworms/Screen/stageScreen/weightScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class JobListCard extends StatelessWidget {
-  const JobListCard({super.key});
-
+   JobListCard({super.key});
+   homeController homeCtrl = Get.put(homeController());
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -24,7 +25,10 @@ class JobListCard extends StatelessWidget {
                       fontWeight: FontWeight.w500),
                 ))),
                 SizedBox(height: 4.h,),
-        InkWell(onTap: (){
+        for(var data in homeCtrl.joblist )
+        
+        
+         InkWell(onTap: (){
           Get.to(()=>weightScreen());
         },
           child: JobSheetCard(

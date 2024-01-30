@@ -29,7 +29,7 @@ class homeController extends GetxController {
     getdata();
   }
   void getjoblist()async{
-    final Response = await get(Uri.parse(baseUrl + "jobs/75/list-jobs"),
+    final Response = await get(Uri.parse(baseUrl + "jobs/$id/list-jobs"),
     
     
     headers: {
