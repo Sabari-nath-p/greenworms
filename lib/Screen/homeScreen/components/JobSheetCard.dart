@@ -118,7 +118,7 @@ class JobSheetCard extends StatelessWidget {
                 ),
                
                 Text(
-                  "03-FEB-2024",
+                  jobData["date"].toString(),
                   textAlign: TextAlign.end,
                   style: GoogleFonts.lexend(
                       fontSize: 11.sp,
@@ -162,7 +162,7 @@ class JobSheetCard extends StatelessWidget {
                 ),
                 
                 Text(
-                  "MIXED WASTE",
+                  jobData["material_type"].toString(),
                   style: GoogleFonts.lexend(
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,
@@ -203,7 +203,7 @@ class JobSheetCard extends StatelessWidget {
                 ),
                
                 Text(
-                  "1000 KG",
+                  jobData["weight"].toString(),
                   style: GoogleFonts.lexend(
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,
