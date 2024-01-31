@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/ProfileScreen/ChangePassword.dart';
+import 'package:greenworms/Screen/ProfileScreen/EditProfileScreen.dart';
 import 'package:http/http.dart';
 import 'package:sizer/sizer.dart';
 
@@ -25,12 +26,17 @@ class _ProfileScreenState extends State<ProfileScreen> {
             ),
             Align(
               alignment: Alignment.center,
-              child: ClipOval(
-                child: Image.asset(
-                  'assets/image/profile.png',
-                  width: 10.h,
-                  height: 10.h,
-                  fit: BoxFit.cover,
+              child: InkWell(
+                onTap: () {
+                  Get.to(()=>EditProfileScreen());
+                },
+                child: ClipOval(
+                  child: Image.asset(
+                    'assets/image/profile.png',
+                    width: 10.h,
+                    height: 10.h,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

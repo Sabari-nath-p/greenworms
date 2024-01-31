@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
-import 'package:greenworms/Screen/weightScreen/weightScreen.dart';
+import 'package:greenworms/Screen/stageScreen/weightScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class JobListCard extends StatelessWidget {
