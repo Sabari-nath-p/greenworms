@@ -2,12 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/controller.dart';
+import 'package:greenworms/Screen/homeScreen/controller.dart';
+import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class StatusBar extends StatelessWidget {
   StatusBar({super.key});
 
-  JobController jctrl = Get.put(JobController());
+  homeController jctrl = Get.put(homeController());
   @override
   Widget build(BuildContext context) {
     return Row(

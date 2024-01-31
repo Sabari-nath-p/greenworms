@@ -9,13 +9,21 @@ import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
 import 'package:greenworms/Screen/homeScreen/controller.dart';
 import 'package:sizer/sizer.dart';
 
-class JobScreen extends StatelessWidget {
+class JobScreen extends StatefulWidget {
   JobScreen({super.key});
+
+  @override
+  State<JobScreen> createState() => _JobScreenState();
+}
+
+class _JobScreenState extends State<JobScreen> {
   homeController jctrl = Get.put(homeController());
+  TextEditingController searchController = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
-      body: GetBuilder<JobController>(builder: (_) {
+      body: GetBuilder<homeController>(builder: (_) {
         return SingleChildScrollView(
           child: Column(
             children: [
@@ -29,6 +37,10 @@ class JobScreen extends StatelessWidget {
                   width: 92.05.w,
                   height: 5.8.h,
                   child: TextFormField(
+                    controller: searchController,
+                    onChanged: (value) {
+                      setState(() {});
+                    },
                     keyboardType: TextInputType.emailAddress,
                     textAlignVertical: TextAlignVertical.center,
                     decoration: InputDecoration(
@@ -55,22 +67,32 @@ class JobScreen extends StatelessWidget {
               SizedBox(height: 2.5.h),
               if (jctrl.jStatus == 0)
                 for (var data in jctrl.joblist)
-                  JobSheetCard(
-                    JobStatus: 0,
-                    jobData: data,
-                  )
-              else if (jctrl.jStatus == 1)
-                for (var data in jctrl.joblist)
-                  JobSheetCard(
-                    JobStatus: 1,
-                    jobData: data,
-                  )
-              else
-                for (var data in jctrl.joblist)
-                  JobSheetCard(
-                    JobStatus: 2,
-                    jobData: data,
-                  )
+                  if (data["status"]["name"] == "initiated")
+                    if (data["id"].toString().contains(searchController.text))
+                      JobSheetCard(
+                        JobStatus: 0,
+                        jobData: data,
+                      )
+                    else if (jctrl.jStatus == 1)
+                      for (var data in jctrl.joblist)
+                        if (data["status"]["name"] == "progress")
+                          if (data["id"]
+                              .toString()
+                              .contains(searchController.text))
+                            JobSheetCard(
+                              JobStatus: 1,
+                              jobData: data,
+                            )
+                          else
+                            for (var data in jctrl.joblist)
+                              if (data["status"]["name"] == "completed")
+                                if (data["id"]
+                                    .toString()
+                                    .contains(searchController.text))
+                                  JobSheetCard(
+                                    JobStatus: 2,
+                                    jobData: data,
+                                  )
             ],
           ),
         );

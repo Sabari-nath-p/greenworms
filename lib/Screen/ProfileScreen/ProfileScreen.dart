@@ -95,7 +95,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         Expanded(child: Container()),
                         Text(
-                          "+91 9048514599",
+                          profileCtrl.Phoneno,
                           style: GoogleFonts.lexend(
                               fontSize: 12.sp,
                               color: Color(0xff053532),
@@ -125,7 +125,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
                         ),
                         Expanded(child: Container()),
                         Text(
-                          "anandusuresh001@gnail.com",
+                          profileCtrl.mailid,
                           style: GoogleFonts.lexend(
                               fontSize: 12.sp,
                               color: Color(0xff053532),
