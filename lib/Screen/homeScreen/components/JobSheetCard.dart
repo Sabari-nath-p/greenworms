@@ -4,7 +4,9 @@ import 'package:sizer/sizer.dart';
 
 class JobSheetCard extends StatelessWidget {
   int JobStatus;
-  JobSheetCard({super.key, required this.JobStatus});
+  var jobData ;
+  
+  JobSheetCard({super.key, required this.JobStatus,required this .jobData});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +76,7 @@ class JobSheetCard extends StatelessWidget {
                 ),
               
                 Text(
-                  "#001",
+                  jobData["id"].toString(),
                   style: GoogleFonts.lexend(
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,

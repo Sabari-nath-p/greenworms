@@ -36,7 +36,7 @@ materialController mctrl = Get.put(materialController());
                   height: 2.h,
                 ),
                 Container(
-                  width: 80.w,
+                  width: 95.w,
                   height: 3.5.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
@@ -53,7 +53,7 @@ materialController mctrl = Get.put(materialController());
                 ),
                 SizedBox(height: 1.5.h),
                 Container(
-                  width: 79.47.w,
+                  width: 80.w,
                   height: 5.5.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
@@ -62,10 +62,11 @@ materialController mctrl = Get.put(materialController());
                     'മെറ്റീരിയൽ റിക്കവറി പോയിന്റിൽ ഇറക്കിയതിന്റെ ഫോട്ടോ എടുത്തു അപ്‌ലോഡ് ചെയ്യുക   ',
                     style: TextStyle(
                         fontFamily: 'Lexend',
+                    
                         fontSize: 10.88.sp,
                         color: Color.fromRGBO(73, 73, 73, 1),
                         fontWeight: FontWeight.w500,
-                        letterSpacing: -0.01.w),
+                        letterSpacing: -0.01.w),textAlign: TextAlign.start,
                   ),
                 ),
                 SizedBox(height: 6.82.h),
