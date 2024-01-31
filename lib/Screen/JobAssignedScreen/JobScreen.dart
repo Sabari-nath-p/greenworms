@@ -6,11 +6,12 @@ import 'package:greenworms/Screen/JobAssignedScreen/Component/StatusBar.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/Component/jsProgressCart.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/controller.dart';
 import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
+import 'package:greenworms/Screen/homeScreen/controller.dart';
 import 'package:sizer/sizer.dart';
 
 class JobScreen extends StatelessWidget {
   JobScreen({super.key});
-  JobController jctrl = Get.put(JobController());
+  homeController jctrl = Get.put(homeController());
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
@@ -53,16 +54,23 @@ class JobScreen extends StatelessWidget {
               ),
               SizedBox(height: 2.5.h),
               if (jctrl.jStatus == 0)
-                JobSheetCard(
-                  JobStatus: 0,
-                )
+                for (var data in jctrl.joblist)
+                  JobSheetCard(
+                    JobStatus: 0,
+                    jobData: data,
+                  )
               else if (jctrl.jStatus == 1)
-                JobSheetCard(
-                  JobStatus: 1,
-                )
+                for (var data in jctrl.joblist)
+                  JobSheetCard(
+                    JobStatus: 1,
+                    jobData: data,
+                  )
               else
-              JobSheetCard(JobStatus: 2)
-              
+                for (var data in jctrl.joblist)
+                  JobSheetCard(
+                    JobStatus: 2,
+                    jobData: data,
+                  )
             ],
           ),
         );

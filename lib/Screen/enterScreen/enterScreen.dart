@@ -10,13 +10,13 @@ import '../materialScreen/materialScreen.dart';
 
 class enterScreen extends StatelessWidget {
    enterScreen({super.key});
-enterController sctrl = Get.put(enterController());
+enterController ectrl = Get.put(enterController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: GetBuilder<enterController>(
         builder: (_) {
-          var ectrl;
+          
           return SingleChildScrollView(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -51,13 +51,13 @@ enterController sctrl = Get.put(enterController());
                 ),
                 SizedBox(height: 1.5.h),
                 Container(
-                  width: 81.31.w,
-                  height: 2.5.h,
+                  width: 98.w,
+                  height: 3.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
                   ),
                   child: Text(
-                    'തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ രേഖപ്പെടുത്തുക ',
+                    'തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ രേഖപ്പെടുത്തുക',
                     style: TextStyle(
                         fontFamily: 'Lexend',
                         fontSize: 10.88.sp,
@@ -106,7 +106,7 @@ enterController sctrl = Get.put(enterController());
                 SizedBox(height: 3.h),
                 Container(
                   width: 23.68.w,
-                  height: 2.35.h,
+                  height: 3.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
                   ),

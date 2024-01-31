@@ -149,7 +149,7 @@ collectionController cctrl = Get.put(collectionController());
                   ),
                   child: Image.asset('assets/image/imagecard.png'),
                 ),
-                SizedBox(height: 23.94.h),
+                SizedBox(height: 20.94.h),
                 Container(
                   width: 84.21.w,
                   height: 5.17.h,

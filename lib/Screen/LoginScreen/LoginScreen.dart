@@ -10,7 +10,7 @@ import 'package:sizer/sizer.dart';
 
 class LoginScreen extends StatelessWidget {
   LoginScreen({super.key});
-  LoginController authCtrl = Get.put(LoginController());
+  LoginController authCtrl = Get.put(LoginController()); // controller call
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(body: SingleChildScrollView(

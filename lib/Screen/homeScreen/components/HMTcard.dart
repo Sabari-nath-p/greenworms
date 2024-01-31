@@ -34,7 +34,7 @@ class HMTCard extends StatelessWidget {
             Container(
               margin: EdgeInsets.only(top: 7.29, left: 4.73.w),
               width: 19.7.w,
-              height: 2.8.h,
+              height: 3.h,
               child: Text(
                 '100',
                 style: TextStyle(

@@ -4,7 +4,9 @@ import 'package:sizer/sizer.dart';
 
 class JobSheetCard extends StatelessWidget {
   int JobStatus;
-  JobSheetCard({super.key, required this.JobStatus});
+  var jobData ;
+  
+  JobSheetCard({super.key, required this.JobStatus,required this .jobData});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +76,7 @@ class JobSheetCard extends StatelessWidget {
                 ),
               
                 Text(
-                  "#001",
+                  jobData["id"].toString(),
                   style: GoogleFonts.lexend(
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,
@@ -116,7 +118,7 @@ class JobSheetCard extends StatelessWidget {
                 ),
                
                 Text(
-                  "03-FEB-2024",
+                  jobData["date"].toString(),
                   textAlign: TextAlign.end,
                   style: GoogleFonts.lexend(
                       fontSize: 11.sp,
@@ -160,7 +162,7 @@ class JobSheetCard extends StatelessWidget {
                 ),
                 
                 Text(
-                  "MIXED WASTE",
+                  jobData["material_type"].toString(),
                   style: GoogleFonts.lexend(
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,
@@ -201,7 +203,7 @@ class JobSheetCard extends StatelessWidget {
                 ),
                
                 Text(
-                  "1000 KG",
+                  jobData["weight"].toString(),
                   style: GoogleFonts.lexend(
                       fontSize: 11.sp,
                       fontWeight: FontWeight.w600,

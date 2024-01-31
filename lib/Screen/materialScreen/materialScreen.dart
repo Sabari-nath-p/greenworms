@@ -6,6 +6,8 @@ import 'package:greenworms/Screen/stageScreen/controller.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
 
+import '../overviewScreen/overviewscreen.dart';
+
 
 
 
@@ -34,7 +36,7 @@ materialController mctrl = Get.put(materialController());
                   height: 2.h,
                 ),
                 Container(
-                  width: 40.w,
+                  width: 95.w,
                   height: 3.5.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
@@ -51,8 +53,8 @@ materialController mctrl = Get.put(materialController());
                 ),
                 SizedBox(height: 1.5.h),
                 Container(
-                  width: 79.47.w,
-                  height: 5.23.h,
+                  width: 80.w,
+                  height: 5.5.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
                   ),
@@ -60,10 +62,11 @@ materialController mctrl = Get.put(materialController());
                     'മെറ്റീരിയൽ റിക്കവറി പോയിന്റിൽ ഇറക്കിയതിന്റെ ഫോട്ടോ എടുത്തു അപ്‌ലോഡ് ചെയ്യുക   ',
                     style: TextStyle(
                         fontFamily: 'Lexend',
+                    
                         fontSize: 10.88.sp,
                         color: Color.fromRGBO(73, 73, 73, 1),
                         fontWeight: FontWeight.w500,
-                        letterSpacing: -0.01.w),
+                        letterSpacing: -0.01.w),textAlign: TextAlign.start,
                   ),
                 ),
                 SizedBox(height: 6.82.h),
@@ -141,7 +144,7 @@ materialController mctrl = Get.put(materialController());
                       })
                 ),SizedBox(height:2.6.h),
                 if(mctrl.materialimage!=null)
-                Container(
+                 Container(
                   width: 84.21.w,
                   height: 12.36.h,
                   margin: EdgeInsets.only(
@@ -150,20 +153,20 @@ materialController mctrl = Get.put(materialController());
                   ),
                   child: Image.asset('assets/image/imagecard.png'),
                 ),
-                SizedBox(height: 23.94.h),
+                SizedBox(height: 21.94.h),
                 Container(
                   width: 84.21.w,
-                  height: 5.17.h,
+                  height: 5.17.h,  
                   margin: EdgeInsets.only(left: 7.36.w),
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {Get.to(overviewScreen());},
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(3, 97, 99, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(2.10.w),
                         side: BorderSide(
                           width: 0.50.w,
-                          color: Color.fromRGBO(127, 86, 217, 1),
+                          color: Color.fromRGBO(3, 97, 99, 1),
                         ),
                       ),
                       shadowColor: Color.fromRGBO(16, 24, 40, 0.05),

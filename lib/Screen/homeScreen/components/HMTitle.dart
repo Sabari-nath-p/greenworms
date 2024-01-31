@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenworms/Screen/homeScreen/controller.dart';
 import 'package:sizer/sizer.dart';
 
 class HMTitle extends StatelessWidget {
-  const HMTitle({super.key});
-
+   HMTitle({super.key});
+   homeController homeCtrl = Get.put(homeController());
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -32,7 +34,7 @@ class HMTitle extends StatelessWidget {
               ),
             ),
             Text(
-              'Anandu',
+              homeCtrl.name,
               style: GoogleFonts.lexend(
                 fontSize: 18.33.sp,
                 fontWeight: FontWeight.w400,

@@ -33,7 +33,7 @@ class HMTsmall
           Container(
             margin: EdgeInsets.only(top: 7.29, left: 4.73.w),
             width: 32.89.w,
-            height: 2.8.h,
+            height: 3.h,
             child: Text(
               '1000 Ton',
               style: TextStyle(
