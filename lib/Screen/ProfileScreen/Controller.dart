@@ -19,7 +19,7 @@ class ProfileController extends GetxController {
   String token = "";
   String mailid = "";
   int id = 0;
-
+String? ProfileImage;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -43,7 +43,7 @@ class ProfileController extends GetxController {
       name = data["data"]["name"].toString();
       Phoneno = data["data"]["phone"].toString();
       mailid = data["data"]["email"].toString();
-
+  ProfileImage = data["data"]["profile_image"];
       update();
     }
   }

@@ -34,12 +34,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Get.to(() => EditProfileScreen());
                   },
                   child: ClipOval(
-                    child: Image.asset(
+                    child:   (profileCtrl.ProfileImage==null)?
+                    Image.asset(
                       'assets/image/profile.png',
                       width: 10.h,
                       height: 10.h,
                       fit: BoxFit.cover,
-                    ),
+                    ):Image.network(profileCtrl.ProfileImage!),
                   ),
                 ),
               ),
