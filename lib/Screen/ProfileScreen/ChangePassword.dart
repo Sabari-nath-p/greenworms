@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenworms/Screen/ProfileScreen/Controller.dart';
 import 'package:http/http.dart';
 import 'package:sizer/sizer.dart';
 
@@ -11,7 +12,9 @@ class ChangePasswordScreen extends StatefulWidget {
   State<ChangePasswordScreen> createState() => _ChangePasswordScreenState();
 }
 
+
 class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
+  ProfileController profileCtrl = Get.put(ProfileController());
   @override
   Widget build(BuildContext context) {
     return SafeArea(

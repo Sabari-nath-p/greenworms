@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:greenworms/main.dart';
 import 'package:http/http.dart';
@@ -7,11 +8,16 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileController extends GetxController {
   String name = "";
+  
+  var data;
+  
+
   getdata() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     token = pref.getString('token').toString();
     id = pref.getInt("user_id") ?? 0;
     getProfile();
+    getPass();
     update();
   }
 
@@ -19,6 +25,7 @@ class ProfileController extends GetxController {
   String token = "";
   String mailid = "";
   int id = 0;
+  String Pass = "";
 String? ProfileImage;
   @override
   void onInit() {
@@ -46,5 +53,29 @@ String? ProfileImage;
   ProfileImage = data["data"]["profile_image"];
       update();
     }
+  }
+  
+  void getPass()async  {
+    final Response = await post(
+      Uri.parse(baseUrl + "auth/change-password"),
+      headers: {
+        'contentType': 'application/json',
+        "Authorization": "Bearer $token"
+      },
+    );
+
+    if (Response.statusCode == 200) {
+      var data = json.decode(Response.body);
+      print(data[data]);
+
+      Pass = data["user"]["password"].toString();
+      
+      update();
+    }
+    else
+    {
+      Fluttertoast.showToast(msg: data["message"],);
+    }
+
   }
 }
