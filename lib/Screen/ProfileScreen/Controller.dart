@@ -1,5 +1,6 @@
 import 'dart:convert';
 
+import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:greenworms/main.dart';
@@ -8,9 +9,9 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 class ProfileController extends GetxController {
   String name = "";
-  
-  var data;
-  
+  TextEditingController currentPass = TextEditingController();
+  TextEditingController newPass = TextEditingController();
+  TextEditingController confirmPass = TextEditingController();
 
   getdata() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
@@ -26,7 +27,7 @@ class ProfileController extends GetxController {
   String mailid = "";
   int id = 0;
   String Pass = "";
-String? ProfileImage;
+  String? ProfileImage;
   @override
   void onInit() {
     // TODO: implement onInit
@@ -50,32 +51,36 @@ String? ProfileImage;
       name = data["data"]["name"].toString();
       Phoneno = data["data"]["phone"].toString();
       mailid = data["data"]["email"].toString();
-  ProfileImage = data["data"]["profile_image"];
+      ProfileImage = data["data"]["profile_image"];
       update();
     }
   }
-  
-  void getPass()async  {
+
+  void getPass() async {
     final Response = await post(
       Uri.parse(baseUrl + "auth/change-password"),
+      body: {
+        "current_password": currentPass.text.trim(),
+        "new_password": newPass.text.trim(),
+        "confirm_password": confirmPass.text.trim()
+      },
       headers: {
         'contentType': 'application/json',
         "Authorization": "Bearer $token"
       },
     );
+    var cpData = json.decode(Response.body);
+    if (Response.statusCode == 201) {
+      Get.back();
+      Fluttertoast.showToast(
+        msg: cpData["message"],
+      );
 
-    if (Response.statusCode == 200) {
-      var data = json.decode(Response.body);
-      print(data[data]);
-
-      Pass = data["user"]["password"].toString();
-      
       update();
+    } else {
+      Fluttertoast.showToast(
+        msg: cpData["message"],
+      );
     }
-    else
-    {
-      Fluttertoast.showToast(msg: data["message"],);
-    }
-
   }
 }
