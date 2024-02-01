@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenworms/Screen/homeScreen/controller.dart';
+import 'package:greenworms/main.dart';
+import 'package:http/http.dart';
 import 'package:sizer/sizer.dart';
 
 class JobSheetCard extends StatelessWidget {
   int JobStatus;
-  var jobData ;
-  
-  JobSheetCard({super.key, required this.JobStatus,required this .jobData});
+  var jobData;
 
+  JobSheetCard({super.key, required this.JobStatus, required this.jobData});
+  homeController homeCtrl = Get.put(homeController());
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -15,46 +19,51 @@ class JobSheetCard extends StatelessWidget {
       decoration: BoxDecoration(
           border: Border.all(
             color: Color(0xff007C58).withOpacity(0.02.w),
-            
           ),
           borderRadius: BorderRadius.circular(0.9.h)),
       child: Padding(
         padding: EdgeInsets.fromLTRB(4.17.w, 1.h, 0.w, 0.h),
-        child: 
-        Column(
+        child: Column(
           children: [
-            if (JobStatus == 1) Align(
-              alignment: Alignment.topLeft,
-              child: Container(
-                width:24.47.w ,
-                height:2.5.h ,
-                decoration: BoxDecoration(
-                            color: Color(0xff036163).withOpacity(0.2),
-                            borderRadius: BorderRadius.circular(5.8.h)) ,
-                            child: Row(
-                              children: [
-                                SizedBox(width: 2.w,),
-                                Container(
-                                  width: 1.5.h,
-                                  height: 1.5.h,
-                                  decoration:BoxDecoration(
+            if (JobStatus == 1)
+              Align(
+                alignment: Alignment.topLeft,
+                child: Container(
+                  width: 24.47.w,
+                  height: 2.5.h,
+                  decoration: BoxDecoration(
+                      color: Color(0xff036163).withOpacity(0.2),
+                      borderRadius: BorderRadius.circular(5.8.h)),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 2.w,
+                      ),
+                      Container(
+                        width: 1.5.h,
+                        height: 1.5.h,
+                        decoration: BoxDecoration(
                             color: Color(0xff036163),
-                            borderRadius: BorderRadius.circular(25.h))  ,
-                                ),
-                                SizedBox(width: 1.w,),
-                                SizedBox(
-                                  width:17.w ,
-                                  child: Text("In Progress",
-                                                          style: GoogleFonts.lexend(
-                                                              fontSize: 8.33.sp,
-                                                              fontWeight: FontWeight.w500,
-                                                              color:Color(0xff036163) )),
-                                ),
-                              ],
-                            ),
+                            borderRadius: BorderRadius.circular(25.h)),
+                      ),
+                      SizedBox(
+                        width: 1.w,
+                      ),
+                      SizedBox(
+                        width: 17.w,
+                        child: Text("In Progress",
+                            style: GoogleFonts.lexend(
+                                fontSize: 8.33.sp,
+                                fontWeight: FontWeight.w500,
+                                color: Color(0xff036163))),
+                      ),
+                    ],
+                  ),
+                ),
               ),
+            SizedBox(
+              height: 2.h,
             ),
-            SizedBox(height: 2.h,),
             Row(
               children: [
                 SizedBox(
@@ -74,7 +83,6 @@ class JobSheetCard extends StatelessWidget {
                         color: Color(0xff6A6A6A)),
                   ),
                 ),
-              
                 Text(
                   jobData["id"].toString(),
                   style: GoogleFonts.lexend(
@@ -116,7 +124,6 @@ class JobSheetCard extends StatelessWidget {
                         color: Color(0xff6A6A6A)),
                   ),
                 ),
-               
                 Text(
                   jobData["date"].toString(),
                   textAlign: TextAlign.end,
@@ -149,9 +156,7 @@ class JobSheetCard extends StatelessWidget {
                   width: 2.w,
                 ),
                 SizedBox(
-                   
-                  width:39.4 .w,
-                
+                  width: 39.4.w,
                   child: Text(
                     "Pickup Item",
                     style: GoogleFonts.lexend(
@@ -160,7 +165,6 @@ class JobSheetCard extends StatelessWidget {
                         color: Color(0xff6A6A6A)),
                   ),
                 ),
-                
                 Text(
                   jobData["material_type"].toString(),
                   style: GoogleFonts.lexend(
@@ -192,7 +196,7 @@ class JobSheetCard extends StatelessWidget {
                   width: 2.w,
                 ),
                 SizedBox(
-                     width:39.4 .w,
+                  width: 39.4.w,
                   child: Text(
                     "Approx Qty",
                     style: GoogleFonts.lexend(
@@ -201,7 +205,6 @@ class JobSheetCard extends StatelessWidget {
                         color: Color(0xff6A6A6A)),
                   ),
                 ),
-               
                 Text(
                   jobData["weight"].toString(),
                   style: GoogleFonts.lexend(
@@ -233,7 +236,7 @@ class JobSheetCard extends StatelessWidget {
                   width: 3.w,
                 ),
                 SizedBox(
-                     width:39.4 .w,
+                  width: 39.4.w,
                   child: Text(
                     "location",
                     style: GoogleFonts.lexend(
@@ -242,10 +245,11 @@ class JobSheetCard extends StatelessWidget {
                         color: Color(0xff6A6A6A)),
                   ),
                 ),
-               
               ],
             ),
-            SizedBox(height: 1.h,),
+            SizedBox(
+              height: 1.h,
+            ),
             Container(
               alignment: Alignment.centerLeft,
               child: Text(
@@ -260,7 +264,6 @@ class JobSheetCard extends StatelessWidget {
             SizedBox(
               height: 4.w,
             ),
-
             if (JobStatus == 0)
               Row(
                 children: [
@@ -283,18 +286,23 @@ class JobSheetCard extends StatelessWidget {
                   SizedBox(
                     width: 8.w,
                   ),
-                  Container(
-                      width: 33.9.w,
-                      height: 4.15.h,
-                      alignment: Alignment.center,
-                      child: Text("Accept",
-                          style: GoogleFonts.lexend(
-                              fontSize: 11.sp,
-                              fontWeight: FontWeight.w500,
-                              color: Colors.white)),
-                      decoration: BoxDecoration(
-                          color: Color(0xff036163),
-                          borderRadius: BorderRadius.circular(0.9.h))),
+                  InkWell(
+                    onTap: () async {
+                      homeCtrl.changeJobStatus(jobData["id"]);
+                    },
+                    child: Container(
+                        width: 33.9.w,
+                        height: 4.15.h,
+                        alignment: Alignment.center,
+                        child: Text("Accept",
+                            style: GoogleFonts.lexend(
+                                fontSize: 11.sp,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white)),
+                        decoration: BoxDecoration(
+                            color: Color(0xff036163),
+                            borderRadius: BorderRadius.circular(0.9.h))),
+                  ),
                 ],
               ),
             SizedBox(
