@@ -45,4 +45,6 @@ class homeController extends GetxController {
     }
     print(joblist);
   }
+
+  changeJobStatus(int jobId) {}
 }
