@@ -253,7 +253,7 @@ class JobSheetCard extends StatelessWidget {
             Container(
               alignment: Alignment.centerLeft,
               child: Text(
-                "Logidots Technoogies,Atomic Building Kazhakootam Tvm",
+                jobData["address"].toString(),
                 textAlign: TextAlign.start,
                 style: GoogleFonts.lexend(
                     fontSize: 11.sp,
