@@ -60,7 +60,7 @@ enterController ectrl = Get.put(enterController());
                     'തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ രേഖപ്പെടുത്തുക',
                     style: TextStyle(
                         fontFamily: 'Lexend',
-                        fontSize: 10.88.sp,
+                        fontSize: 10.00.sp,
                         color: Color.fromRGBO(73, 73, 73, 1),
                         fontWeight: FontWeight.w500,
                         letterSpacing: -0.01.w),
