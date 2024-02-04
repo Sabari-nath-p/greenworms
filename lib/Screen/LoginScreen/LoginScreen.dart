@@ -6,6 +6,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/Dashboard.dart';
 import 'package:greenworms/Screen/LoginScreen/Controller.dart';
 import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:sizer/sizer.dart';
 
 class LoginScreen extends StatelessWidget {
@@ -49,10 +50,9 @@ class LoginScreen extends StatelessWidget {
                         child: TextFormField(
                           controller: authCtrl.emailController,
                           keyboardType: TextInputType.emailAddress,
-                           textAlignVertical: TextAlignVertical.center,
+                          textAlignVertical: TextAlignVertical.center,
                           decoration: InputDecoration(
                             isDense: true,
-                           
                             hintText: ("Phone"),
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(0.9.h),
@@ -79,11 +79,10 @@ class LoginScreen extends StatelessWidget {
                         child: TextFormField(
                           controller: authCtrl.passwordController,
                           keyboardType: TextInputType.visiblePassword,
-                           textAlignVertical: TextAlignVertical.center,
+                          textAlignVertical: TextAlignVertical.center,
                           decoration: InputDecoration(
                             hintText: ("***********"),
                             isDense: true,
-                             
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(0.9.h),
                               borderSide: BorderSide(
@@ -119,13 +118,16 @@ class LoginScreen extends StatelessWidget {
                   decoration: BoxDecoration(
                       color: Color(0xff036163),
                       borderRadius: BorderRadius.circular(0.9.h)),
-                  child: Text("Login",
-                      style: GoogleFonts.lexend(
-                        textStyle: TextStyle(
-                            color: Colors.white,
-                            fontSize: 13.sp,
-                            fontWeight: FontWeight.w500),
-                      )),
+                  child: (authCtrl.loading)
+                      ? LoadingAnimationWidget.staggeredDotsWave(
+                          color: Colors.white, size: 24)
+                      : Text("Login",
+                          style: GoogleFonts.lexend(
+                            textStyle: TextStyle(
+                                color: Colors.white,
+                                fontSize: 13.sp,
+                                fontWeight: FontWeight.w500),
+                          )),
                 ),
               ),
             ),

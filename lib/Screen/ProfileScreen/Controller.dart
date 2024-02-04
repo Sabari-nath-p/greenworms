@@ -18,7 +18,6 @@ class ProfileController extends GetxController {
     token = pref.getString('token').toString();
     id = pref.getInt("user_id") ?? 0;
     getProfile();
-    getPass();
     update();
   }
 

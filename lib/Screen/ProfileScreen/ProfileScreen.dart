@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenworms/Screen/LoginScreen/LoginScreen.dart';
 import 'package:greenworms/Screen/ProfileScreen/ChangePassword.dart';
 import 'package:greenworms/Screen/ProfileScreen/Controller.dart';
 import 'package:greenworms/Screen/ProfileScreen/EditProfileScreen.dart';
 import 'package:http/http.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sizer/sizer.dart';
 
 class ProfileScreen extends StatefulWidget {
@@ -34,13 +36,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     Get.to(() => EditProfileScreen());
                   },
                   child: ClipOval(
-                    child:   (profileCtrl.ProfileImage==null)?
-                    Image.asset(
-                      'assets/image/profile.png',
-                      width: 10.h,
-                      height: 10.h,
-                      fit: BoxFit.cover,
-                    ):Image.network(profileCtrl.ProfileImage!),
+                    child: (profileCtrl.ProfileImage == null)
+                        ? Image.asset(
+                            'assets/image/profile.png',
+                            width: 10.h,
+                            height: 10.h,
+                            fit: BoxFit.cover,
+                          )
+                        : Image.network(profileCtrl.ProfileImage!),
                   ),
                 ),
               ),
@@ -166,6 +169,32 @@ class _ProfileScreenState extends State<ProfileScreen> {
                     ),
                   ],
                 ),
+              ),
+              Expanded(child: Container()),
+              InkWell(
+                onTap: () async {
+                  SharedPreferences pref =
+                      await SharedPreferences.getInstance();
+                  pref.setString("LOGIN", "OUT");
+                  Get.offAll(() => LoginScreen());
+                },
+                child: Container(
+                  child: Container(
+                      width: 33.9.w,
+                      height: 4.15.h,
+                      alignment: Alignment.center,
+                      child: Text("Logout",
+                          style: GoogleFonts.lexend(
+                              fontSize: 11.sp,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.white)),
+                      decoration: BoxDecoration(
+                          color: Color(0xff036163),
+                          borderRadius: BorderRadius.circular(0.9.h))),
+                ),
+              ),
+              SizedBox(
+                height: 20,
               )
             ],
           );

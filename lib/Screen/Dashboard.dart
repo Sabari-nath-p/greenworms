@@ -22,9 +22,9 @@ class _DashboardState extends State<Dashboard> {
         children: [
           if (indexNum == 0)
             Expanded(child: HomeScreen())
-          else if(indexNum ==1)
+          else if (indexNum == 1)
             Expanded(child: JobScreen())
-            else 
+          else if (indexNum == 3)
             Expanded(child: ProfileScreen())
         ],
       ),
