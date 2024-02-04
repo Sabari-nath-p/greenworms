@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:greenworms/Screen/homeScreen/controller.dart';
 import 'package:greenworms/main.dart';
 import 'package:http/http.dart' as http;
 import 'package:image_picker/image_picker.dart';
@@ -31,6 +32,7 @@ class stageController extends GetxController {
       'Content-Type': 'application/json',
       'Authorization': 'Bearer $token'
     };
+
     var request = http.MultipartRequest(
         'POST', Uri.parse(baseUrl + 'image-upload/upload-multiple'));
 
@@ -42,7 +44,11 @@ class stageController extends GetxController {
     if (response.statusCode == 200 || response.statusCode == 201) {
       String temp = await response.stream.bytesToString();
       var data = json.decode(temp);
-      uploadData("image.png", jobId);
+      List tempImage = [];
+      for (var data in data["data"]) {
+        tempImage.add(data["key"]);
+      }
+      uploadData(tempImage, jobId);
     } else {
       print(response.statusCode);
       print(response.stream.bytesToString());
@@ -50,7 +56,7 @@ class stageController extends GetxController {
     }
   }
 
-  uploadData(String image, String jobId) async {
+  uploadData(List image, String jobId) async {
     print("image_04");
     var headers = {
       'Content-Type': 'application/json',
@@ -61,7 +67,7 @@ class stageController extends GetxController {
             headers: headers,
             body: json.encode({
               "stage": "stage_1",
-              "photos": [image],
+              "photos": image,
               "location_lattitude": pos!.latitude.toString(),
               "location_longitude": pos!.longitude.toString(),
               "weight": double.tryParse(weigthController.text)!.toDouble()
@@ -72,7 +78,8 @@ class stageController extends GetxController {
     if (Response.statusCode == 201 || Response.statusCode == 200) {
       isLoading = false;
       update();
-
+      homeController hctrl = Get.put(homeController());
+      hctrl.getjoblist();
       Get.back();
     } else {
       isLoading = false;
