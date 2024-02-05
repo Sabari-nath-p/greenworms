@@ -1,20 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:greenworms/Screen/JobAssignedScreen/JobScreen.dart';
 import 'package:greenworms/Screen/collectionScreen/collectionScreen.dart';
 import 'package:greenworms/Screen/enterScreen/controller.dart';
 import 'package:greenworms/Screen/stageScreen/controller.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:sizer/sizer.dart';
 
 import '../materialScreen/materialScreen.dart';
 
 class enterScreen extends StatelessWidget {
-   enterScreen({super.key});
-enterController ectrl = Get.put(enterController());
+   String id;
+  
+   enterScreen({super.key,required this .id});
+enterScreenController ectrl = Get.put(enterScreenController());
+
+  
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GetBuilder<enterController>(
+      body: GetBuilder<enterScreenController>(
         builder: (_) {
           
           return SingleChildScrollView(
@@ -203,7 +210,14 @@ enterController ectrl = Get.put(enterController());
                   height: 5.17.h,
                   margin: EdgeInsets.only(left: 7.36.w),
                   child: ElevatedButton(
-                    onPressed: () {Get.to(materialScreen());},
+                    onPressed: () async {
+                      ectrl.isLoading = true;
+                    ectrl.update();
+                    Position pos = await determinePosition();
+                    ectrl.pos = pos;
+                   
+                    ectrl.uploadImage(id);
+                    },
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(3, 97, 99, 1),
                       shape: RoundedRectangleBorder(
@@ -217,7 +231,10 @@ enterController ectrl = Get.put(enterController());
                       elevation: 2,
                     ),
                     child: Center(
-                      child: Text(
+                       child: (ectrl.isLoading)
+                        ? LoadingAnimationWidget.staggeredDotsWave(
+                            color: Colors.white, size: 24)
+                        :  Text(
                         'Save & Next',
                         style: TextStyle(
                           fontFamily: 'Lexend',

@@ -1,18 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
-import 'package:get/route_manager.dart';
+
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/Component/StatusBar.dart';
-import 'package:greenworms/Screen/JobAssignedScreen/Component/jsProgressCart.dart';
-import 'package:greenworms/Screen/JobAssignedScreen/controller.dart';
+
+
+import 'package:greenworms/Screen/enterScreen/enterScreen.dart';
 import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
 import 'package:greenworms/Screen/homeScreen/controller.dart';
+import 'package:greenworms/Screen/materialScreen/materialScreen.dart';
 import 'package:greenworms/Screen/stageScreen/weightScreen.dart';
 import 'package:sizer/sizer.dart';
 
+import '../collectionScreen/collectionScreen.dart';
+
 class JobScreen extends StatefulWidget {
-  JobScreen({super.key});
+  String id;
+  JobScreen({super.key,required this .id});
 
   @override
   State<JobScreen> createState() => _JobScreenState();
@@ -79,12 +84,36 @@ class _JobScreenState extends State<JobScreen> {
                     (data["status"]["name"] == "accepted"||data["status"]["name"]== "in_progress") &&
                     data["id"].toString().contains(searchController.text))
                   InkWell(
-                    onTap: () async {
-                      Get.to(
-                          () => weightScreen(
-                                id: data["id"].toString(),
-                              ),
-                          transition: Transition.rightToLeft);
+                    onTap: () async { 
+                      if (data["TrackingStatus"] == null)
+                      {
+                        Get.to(()=>   weightScreen());
+                      }
+                      else if
+                      (
+                        data["TrackingStatus"] == "stage_1" )
+                      {
+
+                      Get.to(()=> collectionScreen());
+                      }
+                      else if
+                      (
+                        data["TrackingStatus"] == "stage_2" )
+                      {
+
+                      Get.to(()=> enterScreen()),
+                      }
+                      else if
+                      (data["TrackingStatus"] == "stage_3" )
+                      {
+
+                      Get.to(()=> MaterialScreen())
+                      }
+                      
+
+
+                      
+                          
                     },
                     child: JobSheetCard(
                       JobStatus: 1,

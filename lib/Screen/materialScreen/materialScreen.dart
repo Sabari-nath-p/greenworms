@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:greenworms/Screen/enterScreen/enterScreen.dart';
 import 'package:greenworms/Screen/materialScreen/conroller.dart';
@@ -6,18 +7,20 @@ import 'package:greenworms/Screen/stageScreen/controller.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
 
+import '../JobAssignedScreen/JobScreen.dart';
 import '../overviewScreen/overviewscreen.dart';
 
 
 
 
-class materialScreen extends StatelessWidget {
-   materialScreen({super.key});
-materialController mctrl = Get.put(materialController());
+class MaterialScreen extends StatelessWidget {
+  String id;
+   MaterialScreen({super.key,required this .id});
+materialScreenController mctrl = Get.put(materialScreenController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GetBuilder<materialController>(
+      body: GetBuilder<materialScreenController>(
         builder: (_) {
           return SingleChildScrollView(
             child: Column(
@@ -159,7 +162,21 @@ materialController mctrl = Get.put(materialController());
                   height: 5.17.h,  
                   margin: EdgeInsets.only(left: 7.36.w),
                   child: ElevatedButton(
-                    onPressed: () {Get.to(overviewScreen());},
+                    onPressed: () 
+                       async {
+                      mctrl.isLoading = true;
+                    mctrl.update();
+                    Position pos = await determinePosition();
+                    mctrl.pos = pos;
+                   
+                    
+                    mctrl.uploadImage(id);
+                    },
+                    
+
+
+
+                  
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(3, 97, 99, 1),
                       shape: RoundedRectangleBorder(

@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:greenworms/Screen/enterScreen/enterScreen.dart';
 import 'package:greenworms/Screen/stageScreen/controller.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:sizer/sizer.dart';
 
+import '../JobAssignedScreen/JobScreen.dart';
 import 'controller.dart';
 
 
 class collectionScreen extends StatelessWidget {
-   collectionScreen({super.key});
-collectionController cctrl = Get.put(collectionController());
+  String id ;
+   collectionScreen({super.key,required this .id});
+collectionScreenController cctrl = Get.put(collectionScreenController());
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: GetBuilder<collectionController>(
+      body: GetBuilder<collectionScreenController>(
         builder: (_) {
           return SingleChildScrollView(
             child: Column(
@@ -155,7 +158,15 @@ collectionController cctrl = Get.put(collectionController());
                   height: 5.17.h,
                   margin: EdgeInsets.only(left: 7.36.w),
                   child: ElevatedButton(
-                    onPressed: () {Get.to(enterScreen());},
+                    onPressed: ()  async {
+                      cctrl.isLoading = true;
+                    cctrl.update();
+                    Position pos = await determinePosition();
+                    cctrl.pos = pos;
+                   
+                    
+                    cctrl.uploadImage(id);
+                    },
                      
                     style: ElevatedButton.styleFrom(
                       primary: Color.fromRGBO(3, 97, 99, 1),
