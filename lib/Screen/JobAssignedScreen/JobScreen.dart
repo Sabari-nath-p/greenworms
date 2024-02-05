@@ -76,7 +76,7 @@ class _JobScreenState extends State<JobScreen> {
                     jobData: data,
                   )
                 else if (jctrl.jStatus == 1 &&
-                    data["status"]["name"] == "accepted" &&
+                    (data["status"]["name"] == "accepted"||data["status"]["name"]== "in_progress") &&
                     data["id"].toString().contains(searchController.text))
                   InkWell(
                     onTap: () async {
