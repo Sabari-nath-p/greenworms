@@ -5,6 +5,7 @@ import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class Dashboard extends StatefulWidget {
+  
   const Dashboard({super.key});
 
   @override
@@ -23,9 +24,11 @@ class _DashboardState extends State<Dashboard> {
           if (indexNum == 0)
             Expanded(child: HomeScreen())
           else if (indexNum == 1)
-            Expanded(child: JobScreen())
+            Expanded(child: JobScreen()
+            )
           else if (indexNum == 3)
-            Expanded(child: ProfileScreen())
+            Expanded(
+              child: ProfileScreen())
         ],
       ),
       bottomNavigationBar: BottomNavigationBar(

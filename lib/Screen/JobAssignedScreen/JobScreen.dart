@@ -17,7 +17,7 @@ import '../collectionScreen/collectionScreen.dart';
 
 class JobScreen extends StatefulWidget {
   String id;
-  JobScreen({super.key,required this .id});
+  JobScreen({super.key ,required this.id});
 
   @override
   State<JobScreen> createState() => _JobScreenState();
@@ -87,27 +87,28 @@ class _JobScreenState extends State<JobScreen> {
                     onTap: () async { 
                       if (data["TrackingStatus"] == null)
                       {
-                        Get.to(()=>   weightScreen());
+                        Get.to(()=>   weightScreen()
+                        );
                       }
                       else if
                       (
                         data["TrackingStatus"] == "stage_1" )
                       {
 
-                      Get.to(()=> collectionScreen());
+                      Get.to(()=> collectionScreen(id: '',));
                       }
                       else if
                       (
                         data["TrackingStatus"] == "stage_2" )
                       {
 
-                      Get.to(()=> enterScreen()),
+                      Get.to(()=> enterScreen());
                       }
                       else if
                       (data["TrackingStatus"] == "stage_3" )
                       {
 
-                      Get.to(()=> MaterialScreen())
+                      Get.to(()=> MaterialScreen());
                       }
                       
 
