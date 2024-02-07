@@ -83,6 +83,7 @@ class enterScreenController extends GetxController {
       
       hctrl.getjoblist();
       Get.back();
+       Fluttertoast.showToast(msg: " Enter data uploaded ");
     } else {
       isLoading = false;
       Fluttertoast.showToast(msg:json.decode(Response.body)["message"]);

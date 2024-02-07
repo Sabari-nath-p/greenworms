@@ -113,6 +113,7 @@ class materialScreenController extends GetxController {
       Get.back();
       print("job accepeted");
       update();
+       Fluttertoast.showToast(msg: " Material data uploaded ");
     } else {
       Fluttertoast.showToast(msg: json.decode(Response.body)["message"]);
       isLoading = false;
