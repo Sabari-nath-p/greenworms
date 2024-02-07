@@ -80,6 +80,7 @@ class enterScreenController extends GetxController {
       isLoading = false;
       update();
       homeController hctrl = Get.put(homeController());
+      
       hctrl.getjoblist();
       Get.back();
     } else {

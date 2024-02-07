@@ -56,7 +56,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   height: 7.6.h,
                 ),
                 SizedBox(
-                    width: 34.5.w,
+                    
                     height: 2.35.h,
                     child: Text(
                       "Current Password",
@@ -111,7 +111,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     textAlignVertical: TextAlignVertical.center,
                     decoration: InputDecoration(
                       isDense: true,
-                      hintText: ("Anandu"),
+                      hintText: ("New Password"),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(0.9.h),
                         borderSide:
@@ -124,7 +124,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                   height: 2.h,
                 ),
                 SizedBox(
-                    width: 35.5.w,
+                    
                     height: 2.35.h,
                     child: Text(
                       "Confirm Password",
@@ -145,7 +145,7 @@ class _ChangePasswordScreenState extends State<ChangePasswordScreen> {
                     textAlignVertical: TextAlignVertical.center,
                     decoration: InputDecoration(
                       isDense: true,
-                      hintText: ("Anandu"),
+                      hintText: ("Confirm Password"),
                       border: OutlineInputBorder(
                         borderRadius: BorderRadius.circular(0.9.h),
                         borderSide:

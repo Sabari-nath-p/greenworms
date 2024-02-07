@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/enterScreen/enterScreen.dart';
 import 'package:greenworms/Screen/stageScreen/controller.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:loading_animation_widget/loading_animation_widget.dart';
 import 'package:sizer/sizer.dart';
 
 import '../JobAssignedScreen/JobScreen.dart';
@@ -68,7 +70,8 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                         letterSpacing: -0.01.w),
                   ),
                 ),
-                SizedBox(height: 6.82.h),
+              Container(alignment: Alignment.centerLeft,margin: EdgeInsets.only(left: 7.5.w),height: 6.82.h, child: Text("2 of 4 ", style: GoogleFonts.lexend(fontSize: 11.33.sp, color: Colors.black, fontWeight: FontWeight.w500),),),
+             
                 Row(
                   children: [
                     Container(
@@ -93,7 +96,7 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                       margin: EdgeInsets.only(
                         left: 4.w,
                       ),
-                      color: Color.fromRGBO(3, 97, 99, 1),
+                      color: Colors.grey.withOpacity(.56),
                     ),
                     Container(
                       width: 13.68.w,
@@ -101,7 +104,7 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                       margin: EdgeInsets.only(
                         left: 4.w,
                       ),
-                      color: Color.fromRGBO(3, 97, 99, 1),
+                      color: Colors.grey.withOpacity(.56),
                     ),
                   ],
                 ),
@@ -109,7 +112,7 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                
                 
                 Container(
-                  width: 55.52.w,
+                  width: 60.w,
                   height: 3.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
@@ -128,7 +131,7 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                 Container(
                   width: 83.68.w,
                   height: 12.82.h,
-                  margin: EdgeInsets.only(left: 7..w),
+                  margin: EdgeInsets.only(left: 8.w),
                   child: InkWell(
                       child: Image.asset('assets/image/upload.png'),
                       onTap: () async {
@@ -152,7 +155,7 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                   ),
                   child: Image.asset('assets/image/imagecard.png'),
                 ),
-                SizedBox(height: 20.94.h),
+                SizedBox(height: 1.94.h),
                 Container(
                   width: 84.21.w,
                   height: 5.17.h,
@@ -168,20 +171,22 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                     cctrl.uploadImage(id);
                     },
                      
-                    style: ElevatedButton.styleFrom(
-                      primary: Color.fromRGBO(3, 97, 99, 1),
+                    style: ElevatedButton.styleFrom(  primary: Color.fromRGBO(3, 97, 99, 1),
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(2.10.w),
                         side: BorderSide(
                           width: 0.50.w,
-                          color: Color.fromRGBO(127, 86, 217, 1),
+                         color: Color.fromRGBO(3, 97, 99, 1),
                         ),
                       ),
-                      shadowColor: Color.fromRGBO(16, 24, 40, 0.05),
+                   //   shadowColor: Color.fromRGBO(16, 24, 40, 0.05),
                       elevation: 2,
                     ),
                     child: Center(
-                      child: Text(
+                      child:  (cctrl.isLoading)
+                        ? LoadingAnimationWidget.staggeredDotsWave(
+                            color: Colors.white, size: 24)
+                        : Text(
                         'Save & Next',
                         style: TextStyle(
                           fontFamily: 'Lexend',

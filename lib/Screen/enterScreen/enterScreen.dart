@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/JobScreen.dart';
 import 'package:greenworms/Screen/collectionScreen/collectionScreen.dart';
 import 'package:greenworms/Screen/enterScreen/controller.dart';
@@ -41,7 +42,7 @@ enterScreenController ectrl = Get.put(enterScreenController());
                   height: 2.h,
                 ),
                 Container(
-                  width: 32.w,
+                  width: 50.w,
                   height: 3.5.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
@@ -73,7 +74,8 @@ enterScreenController ectrl = Get.put(enterScreenController());
                         letterSpacing: -0.01.w),
                   ),
                 ),
-                SizedBox(height: 6.82.h),
+               Container(alignment: Alignment.centerLeft,margin: EdgeInsets.only(left: 7.5.w),height: 6.82.h, child: Text("3 of 4 ", style: GoogleFonts.lexend(fontSize: 11.33.sp, color: Colors.black, fontWeight: FontWeight.w500),),),
+             
                 Row(
                   children: [
                     Container(
@@ -106,13 +108,13 @@ enterScreenController ectrl = Get.put(enterScreenController());
                       margin: EdgeInsets.only(
                         left: 4.w,
                       ),
-                      color: Color.fromRGBO(3, 97, 99, 1),
+                      color: Colors.grey.withOpacity(.56),
                     ),
                   ],
                 ),
                 SizedBox(height: 3.h),
                 Container(
-                  width: 23.68.w,
+                  width: 26.68.w,
                   height: 3.h,
                   margin: EdgeInsets.only(
                     left: 7.4.w,
@@ -152,6 +154,7 @@ enterScreenController ectrl = Get.put(enterScreenController());
                     ),
                   ),
                   child: TextField(
+                    controller: ectrl.enterController,
                     decoration: InputDecoration(
                         border: InputBorder.none, hintText: "Enter weight"),
                     style: TextStyle(
@@ -182,7 +185,7 @@ enterScreenController ectrl = Get.put(enterScreenController());
                 Container(
                   width: 83.68.w,
                   height: 12.82.h,
-                  margin: EdgeInsets.only(left: 5.5.w),
+                  margin: EdgeInsets.only(left: 8.w),
                   child: InkWell(
                       child: Image.asset('assets/image/upload.png'),
                       onTap: () async {
@@ -204,9 +207,9 @@ enterScreenController ectrl = Get.put(enterScreenController());
                   ),
                   child: Image.asset('assets/image/imagecard.png'),
                 ),
-                SizedBox(height: 12.5.h),
+                SizedBox(height: 2.h),
                 Container(
-                  width: 80.21.w,
+                  width: 84.w,
                   height: 5.17.h,
                   margin: EdgeInsets.only(left: 7.36.w),
                   child: ElevatedButton(

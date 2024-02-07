@@ -137,13 +137,15 @@ class LoginScreen extends StatelessWidget {
               width: 35.5.w,
               child: Align(
                 alignment: Alignment.bottomCenter,
-                child: Text("App Version v1",
+                child: Text(
+                  "App Version v1",
                     style: GoogleFonts.lexend(
                       textStyle: TextStyle(
                           color: Color(0xff007C58),
                           fontSize: 14.sp,
                           fontWeight: FontWeight.w400),
-                    )),
+                    )
+                    ),
               ),
             ),
             SizedBox(height: 0.4.h)

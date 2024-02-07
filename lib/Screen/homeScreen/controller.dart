@@ -77,6 +77,8 @@ class homeController extends GetxController {
     }
   }
 
+   
+
   changeJobStatusReject(int jobId, BuildContext context) async {
     isLoading = true;
     update();

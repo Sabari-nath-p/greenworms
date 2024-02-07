@@ -10,14 +10,15 @@ import 'package:greenworms/Screen/enterScreen/enterScreen.dart';
 import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
 import 'package:greenworms/Screen/homeScreen/controller.dart';
 import 'package:greenworms/Screen/materialScreen/materialScreen.dart';
+import 'package:greenworms/Screen/overviewScreen/overviewScreen.dart';
 import 'package:greenworms/Screen/stageScreen/weightScreen.dart';
 import 'package:sizer/sizer.dart';
 
 import '../collectionScreen/collectionScreen.dart';
 
 class JobScreen extends StatefulWidget {
-  String id;
-  JobScreen({super.key ,required this.id});
+ 
+  JobScreen({super.key });
 
   @override
   State<JobScreen> createState() => _JobScreenState();
@@ -85,9 +86,14 @@ class _JobScreenState extends State<JobScreen> {
                     data["id"].toString().contains(searchController.text))
                   InkWell(
                     onTap: () async { 
+
+
+                      print(data["status"]);
+                      print(data["stage"]);
+                      //Get.to(()=> MaterialScreen(id: data["id"].toString(),));
                       if (data["TrackingStatus"] == null)
                       {
-                        Get.to(()=>   weightScreen()
+                        Get.to(()=>   weightScreen(id: data["id"].toString(),)
                         );
                       }
                       else if
@@ -95,22 +101,24 @@ class _JobScreenState extends State<JobScreen> {
                         data["TrackingStatus"] == "stage_1" )
                       {
 
-                      Get.to(()=> collectionScreen(id: '',));
+                      Get.to(()=> collectionScreen(id: data["id"].toString(),));
                       }
                       else if
                       (
                         data["TrackingStatus"] == "stage_2" )
                       {
 
-                      Get.to(()=> enterScreen());
+                      Get.to(()=> enterScreen(id: data["id"].toString(),));
                       }
                       else if
                       (data["TrackingStatus"] == "stage_3" )
                       {
 
-                      Get.to(()=> MaterialScreen());
+                      Get.to(()=> MaterialScreen(id: data["id"].toString(),));
                       }
-                      
+                      else{
+Get.to(()=> overviewScreen(jobid: data["id"].toString()));
+                      }
 
 
                       
@@ -124,9 +132,14 @@ class _JobScreenState extends State<JobScreen> {
                 else if (jctrl.jStatus == 2 &&
                     data["status"]["name"] == "completed" &&
                     data["id"].toString().contains(searchController.text))
-                  JobSheetCard(
-                    JobStatus: 2,
-                    jobData: data,
+                  InkWell(
+                    onTap: (){
+                      Get.to(()=>overviewScreen(jobid: data["id"].toString(),));
+                    },
+                    child: JobSheetCard(
+                      JobStatus: 2,
+                      jobData: data,
+                    ),
                   )
             ],
           ),

@@ -79,12 +79,43 @@ class materialScreenController extends GetxController {
     if (Response.statusCode == 201 || Response.statusCode == 200) {
       isLoading = false;
       update();
-      homeController hctrl = Get.put(homeController());
-      hctrl.getjoblist();
-      Get.back();
+     changetoCompleted(jobId);
     } else {
       isLoading = false;
       Fluttertoast.showToast(msg:json.decode(Response.body)["message"]);
+      update();
+    }
+
+  }
+
+
+  changetoCompleted(String jobId) async {
+    
+    
+    update();
+    final Response = await http.post(
+        Uri.parse(baseUrl + "jobs/$jobId/change-job-status"),
+        headers: {
+          'contentType': 'application/json',
+          "Authorization": "Bearer $token"
+        },
+        body: {
+          "status": "completed"
+        });
+    print(Response.body);
+    print(Response.statusCode);
+    if (Response.statusCode == 201) {
+     
+      isLoading = false;
+      homeController hctrl = Get.put(homeController());
+      changetoCompleted(jobId);
+      hctrl.getjoblist();
+      Get.back();
+      print("job accepeted");
+      update();
+    } else {
+      Fluttertoast.showToast(msg: json.decode(Response.body)["message"]);
+      isLoading = false;
       update();
     }
   }

@@ -33,7 +33,7 @@ class JobSheetCard extends StatelessWidget {
                 Align(
                   alignment: Alignment.topLeft,
                   child: Container(
-                    width: 24.47.w,
+                    width: 27.47.w,
                     height: 2.5.h,
                     decoration: BoxDecoration(
                         color: Color(0xff036163).withOpacity(0.2),
@@ -54,7 +54,7 @@ class JobSheetCard extends StatelessWidget {
                           width: 1.w,
                         ),
                         SizedBox(
-                          width: 17.w,
+                          width: 19.w,
                           child: Text("In Progress",
                               style: GoogleFonts.lexend(
                                   fontSize: 8.33.sp,
