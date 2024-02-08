@@ -240,7 +240,7 @@ enterScreenController ectrl = Get.put(enterScreenController());
                         :  Text(
                         'Save & Next',
                         style: TextStyle(
-                          fontFamily: 'Lexend',
+                          fontFamily: 'gitLexend',
                           fontSize: 13.33.sp,
                           fontWeight: FontWeight.w600,
                           color: Colors.white,
