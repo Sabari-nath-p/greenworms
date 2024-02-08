@@ -82,7 +82,7 @@ class collectionScreenController extends GetxController {
       homeController hctrl = Get.put(homeController());
       hctrl.getjoblist();
       Get.back();
-      Fluttertoast.showToast(msg: "Collection data uploaded ");
+      Fluttertoast.showToast(msg: "Data uploaded ");
     } else {
       isLoading = false;
       Fluttertoast.showToast(msg:json.decode(Response.body)["message"]);
