@@ -21,8 +21,7 @@ class _DashboardState extends State<Dashboard> {
     return SafeArea(
         child: Scaffold(
       body: Column(
-       mainAxisAlignment: MainAxisAlignment.center,
-       crossAxisAlignment: CrossAxisAlignment.center,
+       
         children: [
           if (indexNum == 0)
             Expanded(child: HomeScreen())
