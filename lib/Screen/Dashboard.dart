@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:greenworms/Screen/ExpenseScreen/ExpenseScreen.dart';
+
+import 'package:greenworms/Screen/ExpenseScreen/components/ExpenseScreen.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/JobScreen.dart';
 import 'package:greenworms/Screen/ProfileScreen/ProfileScreen.dart';
 import 'package:greenworms/Screen/homeScreen/homeScreen.dart';

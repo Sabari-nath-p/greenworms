@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:greenworms/AddExpense/components/FuelCostScreen.dart';
+import 'package:http/http.dart';
 import 'package:sizer/sizer.dart';
 
 class ExpenseScreen extends StatelessWidget {
@@ -43,7 +46,12 @@ class ExpenseScreen extends StatelessWidget {
                      SizedBox(
                       width: 12.w,
                       height: 12.w,
-                      child: Image.asset("assets/images/arrowright.png"))
+                      child: InkWell(
+                        onTap: () {
+                          Get.to(()=>FuelCostScreen() );
+                        },
+                        
+                        child: Image.asset("assets/images/arrowright.png")))
                     ],
                   ),
                 ),
