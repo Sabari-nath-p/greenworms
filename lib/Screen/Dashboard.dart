@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greenworms/Screen/ExpenseScreen/ExpenseScreen.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/JobScreen.dart';
 import 'package:greenworms/Screen/ProfileScreen/ProfileScreen.dart';
 import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
@@ -20,11 +21,16 @@ class _DashboardState extends State<Dashboard> {
     return SafeArea(
         child: Scaffold(
       body: Column(
+       mainAxisAlignment: MainAxisAlignment.center,
+       crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           if (indexNum == 0)
             Expanded(child: HomeScreen())
           else if (indexNum == 1)
             Expanded(child: JobScreen()
+            )
+            else if (indexNum == 2)
+            Expanded(child: ExpenseScreen()
             )
           else if (indexNum == 3)
             Expanded(
