@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:greenworms/Screen/ExpenseScreen/components/ExpenseScreen.dart';
 //import 'package:greenworms/Screen/ExpenseScreen/ExpenseScreen.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/JobScreen.dart';
 import 'package:greenworms/Screen/ProfileScreen/ProfileScreen.dart';
@@ -27,7 +28,8 @@ class _DashboardState extends State<Dashboard> {
           else if (indexNum == 1)
             Expanded(child: JobScreen()
             )
-  
+          else if (indexNum == 2)
+            Expanded(child: ExpenseScreen())
             
           else if (indexNum == 3)
             Expanded(
