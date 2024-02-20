@@ -7,7 +7,6 @@ import 'package:greenworms/Screen/homeScreen/homeScreen.dart';
 import 'package:sizer/sizer.dart';
 
 class Dashboard extends StatefulWidget {
-  
   const Dashboard({super.key});
 
   @override
@@ -20,67 +19,69 @@ class _DashboardState extends State<Dashboard> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-        child: Scaffold(
-      body: Column(
-        children: [
-          if (indexNum == 0)
-            Expanded(child: HomeScreen())
-          else if (indexNum == 1)
-            Expanded(child: JobScreen()
-            )
-          else if (indexNum == 2)
-            Expanded(child: ExpenseScreen())
-            
-          else if (indexNum == 3)
-            Expanded(
-              child: ProfileScreen())
-      
-        ],
-      ),
-      
-      bottomNavigationBar: BottomNavigationBar(
-          items: [
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/image/home.png",
-                height: 7.3.h,
-              ),
-              label: "Home",
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/image/jobbot.png",
-                height: 7.3.h,
-              ),
-              label: "Job",
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/image/expense.png",
-                height: 7.3.h,
-              ),
-              label: "Expense",
-            ),
-            BottomNavigationBarItem(
-              icon: Image.asset(
-                "assets/image/profilebot.png",
-                height: 7.3.h,
-              ),
-              label: "Profile",
-            ),
+      child: Scaffold(
+        body: Column(
+          children: [
+            if (indexNum == 0)
+              Expanded(child: HomeScreen())
+            else if (indexNum == 1)
+              Expanded(child: JobScreen())
+            else if (indexNum == 2)
+              Expanded(child: ExpenseScreen())
+            else if (indexNum == 3)
+              Expanded(child: ProfileScreen())
           ],
-          iconSize: 40,
-          selectedFontSize: 10,
-          showSelectedLabels: false,
-          showUnselectedLabels: false,
-          currentIndex: indexNum,
-          onTap: (int index) {
-            setState(() {
-              indexNum = index;
-            });
-          }),
-    
-    ),
+        ),
+        bottomNavigationBar: BottomNavigationBar(
+            items: [
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  "assets/image/home.png",
+                  color:
+                      (indexNum != 0) ? Color(0xff5E5F60) : Color(0xff036163),
+                  height: 7.3.h,
+                ),
+                label: "Home",
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  "assets/image/jobbot.png",
+                  height: 7.3.h,
+                  color:
+                      (indexNum != 1) ? Color(0xff5E5F60) : Color(0xff036163),
+                ),
+                label: "Job",
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  "assets/image/expense.png",
+                  color:
+                      (indexNum != 2) ? Color(0xff5E5F60) : Color(0xff036163),
+                  height: 7.3.h,
+                ),
+                label: "Expense",
+              ),
+              BottomNavigationBarItem(
+                icon: Image.asset(
+                  "assets/image/profilebot.png",
+                  color:
+                      (indexNum != 3) ? Color(0xff5E5F60) : Color(0xff036163),
+                  height: 7.3.h,
+                ),
+                label: "Profile",
+              ),
+            ],
+            iconSize: 40,
+            selectedFontSize: 10,
+            showSelectedLabels: false,
+            showUnselectedLabels: false,
+            currentIndex: indexNum,
+            onTap: (int index) {
+              setState(() {
+                indexNum = index;
+              });
+            }),
+      ),
     );
   }
 }

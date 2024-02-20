@@ -41,7 +41,7 @@ class stageController extends GetxController {
         .add(await http.MultipartFile.fromPath('files', weightimage!.path!));
     request.headers.addAll(headers);
     http.StreamedResponse response = await request.send();
-    print("image_02");
+
     if (response.statusCode == 200 || response.statusCode == 201) {
       String temp = await response.stream.bytesToString();
       var data = json.decode(temp);
@@ -58,6 +58,9 @@ class stageController extends GetxController {
   }
 
   uploadData(List image, String jobId) async {
+    print(pos!.latitude);
+    print(weigthController.text);
+
     print("image_04");
     var headers = {
       'Content-Type': 'application/json',
@@ -82,10 +85,10 @@ class stageController extends GetxController {
       homeController hctrl = Get.put(homeController());
       hctrl.getjoblist();
       Get.back();
-       Fluttertoast.showToast(msg: " Data uploaded ");
+      Fluttertoast.showToast(msg: " Data uploaded ");
     } else {
       isLoading = false;
-      Fluttertoast.showToast(msg:json.decode(Response.body)["message"]);
+      Fluttertoast.showToast(msg: json.decode(Response.body)["message"]);
       update();
     }
   }
