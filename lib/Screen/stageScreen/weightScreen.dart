@@ -62,7 +62,10 @@ class weightScreen extends StatelessWidget {
                   left: 7.4.w,
                 ),
                 child: Text(
-                  'തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ രേഖപ്പെടുത്തുക ',
+                  
+                  
+                  "കാലി തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ n\ രേഖപ്പെടുത്തുക ",
+
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 10.88.sp,
