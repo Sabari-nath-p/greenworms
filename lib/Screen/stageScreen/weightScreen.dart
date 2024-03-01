@@ -45,7 +45,7 @@ class weightScreen extends StatelessWidget {
                   left: 7.4.w,
                 ),
                 child: Text(
-                  'Enter Weight',
+                  'Enter Net Weight',
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 16.66.sp,
@@ -172,7 +172,7 @@ class weightScreen extends StatelessWidget {
                   left: 7.14.w,
                 ),
                 child: Text(
-                  ' ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക ',
+                  ' തൂക്കഷീറ്റ് ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക ',
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 10.88.sp,
@@ -205,7 +205,21 @@ class weightScreen extends StatelessWidget {
                   ),
                   child: Image.asset('assets/image/imagecard.png'),
                 ),
-              SizedBox(height: 5.5.h),
+              SizedBox(height: 2.5.h),
+              Container(
+                margin: EdgeInsets.only(left: 7.w),
+                child: Text(
+                      ' പരമാവധി 1 ഫോട്ടോ',
+                      style: TextStyle(
+                          fontFamily: 'Lexend',
+                          fontSize: 10.88.sp,
+                          color: Color.fromRGBO(73, 73, 73, 1),
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: -0.01.w),
+                    ),
+              ),
+              SizedBox(height: 1.h,),
+              
               Container(
                 width: 80.21.w,
                 height: 5.17.h,

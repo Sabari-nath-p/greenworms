@@ -44,7 +44,7 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                     left: 7.4.w,
                   ),
                   child: Text(
-                    'Collection Point',
+                    'Photo From Collection Point',
                     style: TextStyle(
                         fontFamily: 'Lexend',
                         fontSize: 16.66.sp,
@@ -61,7 +61,7 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                     left: 7.4.w,
                   ),
                   child: Text(
-                    ' വണ്ടിയിൽ വേസ്റ്റ് കയറ്റിയതിന്റെ ഫോട്ടോ എടുത്തുഅപ്‌ലോഡ് ചെയ്യുക ',
+                    ' വണ്ടിയിൽ വേസ്റ്റ് കയറ്റിയതിന്റെ ഫോട്ടോ എടുത്തു \n അപ്‌ലോഡ് ചെയ്യുക',
                     style: TextStyle(
                         fontFamily: 'Lexend',
                         fontSize: 10.88.sp,
@@ -145,6 +145,19 @@ collectionScreenController cctrl = Get.put(collectionScreenController());
                             cctrl.update();
                       })
                 ),SizedBox(height:2.6.h),
+                Container(
+                  margin: EdgeInsets.only(left: 7.14.w),
+                  child: Text(
+                      ' കുറഞ്ഞത് 2  ഫോട്ടോ ,പരമാവധി 4 ഫോട്ടോ',
+                      style: TextStyle(
+                          fontFamily: 'Lexend',
+                          fontSize: 10.88.sp,
+                          color: Color.fromRGBO(73, 73, 73, 1),
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: -0.01.w),
+                    ),
+                ),
+                SizedBox(height: 1.h,),
                 if(cctrl.collectimage!=null)
                 Container(
                   width: 84.21.w,

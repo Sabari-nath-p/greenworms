@@ -65,7 +65,7 @@ enterScreenController ectrl = Get.put(enterScreenController());
                     left: 7.4.w,
                   ),
                   child: Text(
-                    'തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ രേഖപ്പെടുത്തുക',
+                    'കാലി തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ \n രേഖപ്പെടുത്തുക',
                     style: TextStyle(
                         fontFamily: 'Lexend',
                         fontSize: 10.00.sp,
@@ -207,7 +207,20 @@ enterScreenController ectrl = Get.put(enterScreenController());
                   ),
                   child: Image.asset('assets/image/imagecard.png'),
                 ),
-                SizedBox(height: 2.h),
+                SizedBox(height: 1.h),
+                Container(
+                  margin: EdgeInsets.only(left: 7.14.w),
+                  child: Text(
+                      ' പരമാവധി 1 ഫോട്ടോ',
+                      style: TextStyle(
+                          fontFamily: 'Lexend',
+                          fontSize: 10.88.sp,
+                          color: Color.fromRGBO(73, 73, 73, 1),
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: -0.01.w),
+                    ),
+                ),
+                  SizedBox(height: 2.h),
                 Container(
                   width: 84.w,
                   height: 5.17.h,

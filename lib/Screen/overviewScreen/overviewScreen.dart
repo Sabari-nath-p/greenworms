@@ -60,7 +60,7 @@ class overviewScreen extends StatelessWidget {
                             left: 7.4.w,
                           ),
                           child: Text(
-                            'തുടക്കത്തിൽ വണ്ടിയുടെ ഭാരം ',
+                            'കാലി തൂക്കം ',
                             style: TextStyle(
                                 fontFamily: 'Lexend',
                                 fontSize: 10.88.sp,
@@ -70,7 +70,7 @@ class overviewScreen extends StatelessWidget {
                           ),
                         ),
                          SizedBox(height:1.5.h),
-                        Container(
+                       if(mctrl.data.length>1) Container(
                           width: 84.21.w,
                           height: 6.h,
                           alignment: Alignment.centerLeft,
@@ -155,6 +155,7 @@ class overviewScreen extends StatelessWidget {
                       
                          // SizedBox(height:.5.h),
                        
+                       if (mctrl.data.length>2)
                        Container(
                           width: 89.47.w,
                           height: 18.9.h,

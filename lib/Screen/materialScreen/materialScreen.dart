@@ -47,7 +47,7 @@ materialScreenController mctrl = Get.put(materialScreenController());
                     left: 7.4.w,
                   ),
                   child: Text(
-                    'Material Recovery Facility',
+                    'MRF Unloading Photo ',
                     style: TextStyle(
                         fontFamily: 'Lexend',
                         fontSize: 16.66.sp,
@@ -64,7 +64,7 @@ materialScreenController mctrl = Get.put(materialScreenController());
                     left: 7.4.w,
                   ),
                   child: Text(
-                    'മെറ്റീരിയൽ റിക്കവറി പോയിന്റിൽ ഇറക്കിയതിന്റെ ഫോട്ടോ എടുത്തു അപ്‌ലോഡ് ചെയ്യുക   ',
+                    'മെറ്റീരിയൽ MRF എത്തിയതിന്റെ \n ഫോട്ടോ എടുത്തു അപ്‌ലോഡ് ചെയ്യുക     ',
                     style: TextStyle(
                         fontFamily: 'Lexend',
                     
@@ -132,6 +132,7 @@ materialScreenController mctrl = Get.put(materialScreenController());
                   ),
                 ),
                 SizedBox(height: 1.76.h),
+
                 Container(
                   width: 83.68.w,
                   height: 12.82.h,
@@ -148,7 +149,20 @@ materialScreenController mctrl = Get.put(materialScreenController());
                             await picker.pickImage(source: ImageSource.camera);
                             mctrl.update();
                       })
-                ),SizedBox(height:2.6.h),
+                ),SizedBox(height:1.6.h),
+                 Container(
+                  margin: EdgeInsets.only(left: 7.14.w),
+                  child: Text(
+                      ' കുറഞ്ഞത് 2  ഫോട്ടോ ,പരമാവധി 4 ഫോട്ടോ',
+                      style: TextStyle(
+                          fontFamily: 'Lexend',
+                          fontSize: 10.88.sp,
+                          color: Color.fromRGBO(73, 73, 73, 1),
+                          fontWeight: FontWeight.w500,
+                          letterSpacing: -0.01.w),
+                    ),
+                ),
+                SizedBox(height:1.6.h),
                 if(mctrl.materialimage!=null)
                  Container(
                   width: 84.21.w,
