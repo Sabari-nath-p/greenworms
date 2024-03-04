@@ -36,7 +36,7 @@ class JobListCard extends StatelessWidget {
                     InkWell(
                       onTap: () {
                         Get.to(() => weightScreen(
-                              id: data["id"],
+                              id: data["id"].toString(),
                             ));
                       },
                       child: JobSheetCard(
