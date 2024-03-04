@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 //import 'package:greenworms/AddExpense/AddExpenseScreen/FuelCostScreen.dart';
-import 'package:greenworms/AddExpenseScreen/FuelCostScreen.dart';
+import 'package:greenworms/Screen/AddExpenseScreen/FuelCostScreen.dart';
 import 'package:greenworms/Screen/ExpenseScreen/controller.dart';
 import 'package:http/http.dart';
 import 'package:sizer/sizer.dart';

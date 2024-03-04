@@ -70,7 +70,7 @@ class _AddExpensePageState extends State<AddExpensePage> {
                             lastDate: DateTime.now());
 
                         if (dt != null) {
-                          date.text = DateFormat("y-MM-DD").format(dt);
+                          date.text = DateFormat("y-MM-dd").format(dt);
                           setState(() {});
                         }
                       },

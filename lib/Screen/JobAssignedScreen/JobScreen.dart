@@ -5,7 +5,6 @@ import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:greenworms/Screen/JobAssignedScreen/Component/StatusBar.dart';
 
-
 import 'package:greenworms/Screen/enterScreen/enterScreen.dart';
 import 'package:greenworms/Screen/homeScreen/components/JobSheetCard.dart';
 import 'package:greenworms/Screen/homeScreen/controller.dart';
@@ -17,8 +16,7 @@ import 'package:sizer/sizer.dart';
 import '../collectionScreen/collectionScreen.dart';
 
 class JobScreen extends StatefulWidget {
- 
-  JobScreen({super.key });
+  JobScreen({super.key});
 
   @override
   State<JobScreen> createState() => _JobScreenState();
@@ -82,47 +80,34 @@ class _JobScreenState extends State<JobScreen> {
                     jobData: data,
                   )
                 else if (jctrl.jStatus == 1 &&
-                    (data["status"]["name"] == "accepted"||data["status"]["name"]== "in_progress") &&
+                    (data["status"]["name"] == "accepted" ||
+                        data["status"]["name"] == "in_progress") &&
                     data["id"].toString().contains(searchController.text))
                   InkWell(
-                    onTap: () async { 
-
-
+                    onTap: () async {
                       print(data["status"]);
                       print(data["stage"]);
                       //Get.to(()=> MaterialScreen(id: data["id"].toString(),));
-                      if (data["TrackingStatus"] == null)
-                      {
-                        Get.to(()=>   weightScreen(id: data["id"].toString(),)
-                        );
+                      if (data["TrackingStatus"] == null) {
+                        Get.to(() => weightScreen(
+                              id: data["id"].toString(),
+                            ));
+                      } else if (data["TrackingStatus"] == "stage_1") {
+                        Get.to(() => collectionScreen(
+                              id: data["id"].toString(),
+                            ));
+                      } else if (data["TrackingStatus"] == "stage_2") {
+                        Get.to(() => enterScreen(
+                              id: data["id"].toString(),
+                            ));
+                      } else if (data["TrackingStatus"] == "stage_3") {
+                        Get.to(() => MaterialScreen(
+                              id: data["id"].toString(),
+                            ));
+                      } else {
+                        Get.to(
+                            () => overviewScreen(jobid: data["id"].toString()));
                       }
-                      else if
-                      (
-                        data["TrackingStatus"] == "stage_1" )
-                      {
-
-                      Get.to(()=> collectionScreen(id: data["id"].toString(),));
-                      }
-                      else if
-                      (
-                        data["TrackingStatus"] == "stage_2" )
-                      {
-
-                      Get.to(()=> enterScreen(id: data["id"].toString(),));
-                      }
-                      else if
-                      (data["TrackingStatus"] == "stage_3" )
-                      {
-
-                      Get.to(()=> MaterialScreen(id: data["id"].toString(),));
-                      }
-                      else{
-Get.to(()=> overviewScreen(jobid: data["id"].toString()));
-                      }
-
-
-                      
-                          
                     },
                     child: JobSheetCard(
                       JobStatus: 1,
@@ -133,8 +118,10 @@ Get.to(()=> overviewScreen(jobid: data["id"].toString()));
                     data["status"]["name"] == "completed" &&
                     data["id"].toString().contains(searchController.text))
                   InkWell(
-                    onTap: (){
-                      Get.to(()=>overviewScreen(jobid: data["id"].toString(),));
+                    onTap: () {
+                      Get.to(() => overviewScreen(
+                            jobid: data["id"].toString(),
+                          ));
                     },
                     child: JobSheetCard(
                       JobStatus: 2,

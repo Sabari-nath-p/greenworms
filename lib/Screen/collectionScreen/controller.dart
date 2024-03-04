@@ -11,7 +11,8 @@ import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class collectionScreenController extends GetxController {
-  XFile? collectimage;
+  //XFile? collectimage;
+  List<XFile> collectimage = [];
   int? id;
   String? token;
   bool isLoading = false;
@@ -36,9 +37,9 @@ class collectionScreenController extends GetxController {
 
     var request = http.MultipartRequest(
         'POST', Uri.parse(baseUrl + 'image-upload/upload-multiple'));
-
-    request.files
-        .add(await http.MultipartFile.fromPath('files', collectimage!.path!));
+    for (var data in collectimage)
+      request.files
+          .add(await http.MultipartFile.fromPath('files', data!.path!));
     request.headers.addAll(headers);
     http.StreamedResponse response = await request.send();
     print("image_02");
@@ -71,7 +72,6 @@ class collectionScreenController extends GetxController {
               "photos": image,
               "location_lattitude": pos!.latitude.toString(),
               "location_longitude": pos!.longitude.toString(),
-              
             }));
     print("image_05");
     print(Response.body);
@@ -85,7 +85,7 @@ class collectionScreenController extends GetxController {
       Fluttertoast.showToast(msg: "Data uploaded ");
     } else {
       isLoading = false;
-      Fluttertoast.showToast(msg:json.decode(Response.body)["message"]);
+      Fluttertoast.showToast(msg: json.decode(Response.body)["message"]);
       update();
     }
   }

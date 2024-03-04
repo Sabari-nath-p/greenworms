@@ -1,4 +1,7 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
+import 'package:fluttertoast/fluttertoast.dart';
 import 'package:geolocator/geolocator.dart';
 import 'package:get/get.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -62,10 +65,7 @@ class weightScreen extends StatelessWidget {
                   left: 7.4.w,
                 ),
                 child: Text(
-                  
-                  
                   "കാലി തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ n\ രേഖപ്പെടുത്തുക ",
-
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 10.88.sp,
@@ -74,7 +74,18 @@ class weightScreen extends StatelessWidget {
                       letterSpacing: -0.01.w),
                 ),
               ),
-              Container(alignment: Alignment.centerLeft,margin: EdgeInsets.only(left: 7.5.w),height: 6.82.h, child: Text("1 of 4 ", style: GoogleFonts.lexend(fontSize: 11.33.sp, color: Colors.black, fontWeight: FontWeight.w500),),),
+              Container(
+                alignment: Alignment.centerLeft,
+                margin: EdgeInsets.only(left: 7.5.w),
+                height: 6.82.h,
+                child: Text(
+                  "1 of 4 ",
+                  style: GoogleFonts.lexend(
+                      fontSize: 11.33.sp,
+                      color: Colors.black,
+                      fontWeight: FontWeight.w500),
+                ),
+              ),
               Row(
                 children: [
                   Container(
@@ -107,7 +118,7 @@ class weightScreen extends StatelessWidget {
                     margin: EdgeInsets.only(
                       left: 4.w,
                     ),
-                    color:  Colors.grey.withOpacity(.7),
+                    color: Colors.grey.withOpacity(.7),
                   ),
                 ],
               ),
@@ -195,7 +206,20 @@ class weightScreen extends StatelessWidget {
                             await picker.pickImage(source: ImageSource.camera);
                         sctrl.update();
                       })),
-              SizedBox(height: 1.2.h),
+              SizedBox(height: 2.5.h),
+              Container(
+                margin: EdgeInsets.only(left: 7.w),
+                child: Text(
+                  ' പരമാവധി 1 ഫോട്ടോ',
+                  style: TextStyle(
+                      fontFamily: 'Lexend',
+                      fontSize: 10.88.sp,
+                      color: Color.fromRGBO(73, 73, 73, 1),
+                      fontWeight: FontWeight.w500,
+                      letterSpacing: -0.01.w),
+                ),
+              ),
+              // SizedBox(height: 1.2.h),
               if (sctrl.weightimage != null)
                 Container(
                   width: 84.21.w,
@@ -203,34 +227,76 @@ class weightScreen extends StatelessWidget {
                   margin: EdgeInsets.only(
                     left: 7.14.w,
                   ),
-                  child: Image.asset('assets/image/imagecard.png'),
+                  child: InkWell(
+                      onTap: () {
+                        showDialog(
+                            context: context,
+                            builder: (ctx) => Container(
+                                  //   alignment: Alignment.center,
+
+                                  margin:
+                                      EdgeInsets.symmetric(horizontal: 4.2.w),
+                                  child: Material(
+                                    color: Colors.transparent,
+                                    child: Container(
+                                      width: 90.w,
+                                      child: Column(
+                                        // mainAxisSize: MainAxisSize.min,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Image.file(
+                                              File(sctrl.weightimage!.path!)),
+                                          SizedBox(
+                                            height: 30,
+                                          ),
+                                          InkWell(
+                                            onTap: () {
+                                              Get.back();
+                                            },
+                                            child: Container(
+                                                width: 33.9.w,
+                                                height: 4.15.h,
+                                                alignment: Alignment.center,
+                                                child: Text("Back",
+                                                    style: GoogleFonts.lexend(
+                                                        fontSize: 11.sp,
+                                                        fontWeight:
+                                                            FontWeight.w500,
+                                                        color: Colors.white)),
+                                                decoration: BoxDecoration(
+                                                    color: Color(0xff036163),
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            0.9.h))),
+                                          ),
+                                        ],
+                                      ),
+                                    ),
+                                  ),
+                                ));
+                      },
+                      child: Image.asset('assets/image/imagecard.png')),
                 ),
-              SizedBox(height: 2.5.h),
-              Container(
-                margin: EdgeInsets.only(left: 7.w),
-                child: Text(
-                      ' പരമാവധി 1 ഫോട്ടോ',
-                      style: TextStyle(
-                          fontFamily: 'Lexend',
-                          fontSize: 10.88.sp,
-                          color: Color.fromRGBO(73, 73, 73, 1),
-                          fontWeight: FontWeight.w500,
-                          letterSpacing: -0.01.w),
-                    ),
+              SizedBox(
+                height: 1.h,
               ),
-              SizedBox(height: 1.h,),
-              
               Container(
                 width: 80.21.w,
                 height: 5.17.h,
                 margin: EdgeInsets.only(left: 7.36.w),
                 child: ElevatedButton(
                   onPressed: () async {
-                    sctrl.isLoading = true;
-                    sctrl.update();
-                    Position pos = await determinePosition();
-                    sctrl.pos = pos;
-                    sctrl.uploadImage(id);
+                    if (sctrl.weightimage != null &&
+                        sctrl.weigthController.text.isNotEmpty) {
+                      sctrl.isLoading = true;
+                      sctrl.update();
+                      Position pos = await determinePosition();
+                      sctrl.pos = pos;
+                      sctrl.uploadImage(id);
+                    } else {
+                      Fluttertoast.showToast(msg: "Please input data");
+                    }
                   },
                   style: ElevatedButton.styleFrom(
                     primary: Color.fromRGBO(3, 97, 99, 1),

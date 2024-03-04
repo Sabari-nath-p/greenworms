@@ -35,19 +35,16 @@ class homeController extends GetxController {
   }
 
   void getjoblist() async {
-   {
-      
-    } 
-    
-    final Response = await get(
+    {}
 
+    final Response = await get(
       Uri.parse(baseUrl + "jobs/$id/list-jobs"),
-    
       headers: {
         'contentType': 'application/json',
         "Authorization": "Bearer $token"
       },
     );
+    print(Response.body);
     if (Response.statusCode == 200) {
       var data = json.decode(Response.body);
       print(data[data]);
@@ -83,8 +80,6 @@ class homeController extends GetxController {
       update();
     }
   }
-
-   
 
   changeJobStatusReject(int jobId, BuildContext context) async {
     isLoading = true;

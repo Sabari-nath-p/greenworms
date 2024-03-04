@@ -11,7 +11,7 @@ import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class materialScreenController extends GetxController {
-  XFile? materialimage;
+  List<XFile> materialimage = [];
   int? id;
   String? token;
   bool isLoading = false;
@@ -36,9 +36,8 @@ class materialScreenController extends GetxController {
 
     var request = http.MultipartRequest(
         'POST', Uri.parse(baseUrl + 'image-upload/upload-multiple'));
-
-    request.files
-        .add(await http.MultipartFile.fromPath('files', materialimage!.path!));
+    for (var data in materialimage)
+      request.files.add(await http.MultipartFile.fromPath('files', data.path!));
     request.headers.addAll(headers);
     http.StreamedResponse response = await request.send();
     print("image_02");
@@ -71,7 +70,6 @@ class materialScreenController extends GetxController {
               "photos": image,
               "location_lattitude": pos!.latitude.toString(),
               "location_longitude": pos!.longitude.toString(),
-              
             }));
     print("image_05");
     print(Response.body);
@@ -79,33 +77,26 @@ class materialScreenController extends GetxController {
     if (Response.statusCode == 201 || Response.statusCode == 200) {
       isLoading = false;
       update();
-     changetoCompleted(jobId);
+      changetoCompleted(jobId);
     } else {
       isLoading = false;
-      Fluttertoast.showToast(msg:json.decode(Response.body)["message"]);
+      Fluttertoast.showToast(msg: json.decode(Response.body)["message"]);
       update();
     }
-
   }
 
-
   changetoCompleted(String jobId) async {
-    
-    
     update();
-    final Response = await http.post(
-        Uri.parse(baseUrl + "jobs/$jobId/change-job-status"),
-        headers: {
-          'contentType': 'application/json',
-          "Authorization": "Bearer $token"
-        },
-        body: {
-          "status": "completed"
-        });
+    final Response = await http
+        .post(Uri.parse(baseUrl + "jobs/$jobId/change-job-status"), headers: {
+      'contentType': 'application/json',
+      "Authorization": "Bearer $token"
+    }, body: {
+      "status": "completed"
+    });
     print(Response.body);
     print(Response.statusCode);
     if (Response.statusCode == 201) {
-     
       isLoading = false;
       homeController hctrl = Get.put(homeController());
       changetoCompleted(jobId);
@@ -113,7 +104,7 @@ class materialScreenController extends GetxController {
       Get.back();
       print("job accepeted");
       update();
-       Fluttertoast.showToast(msg: "Data uploaded ");
+      Fluttertoast.showToast(msg: "Data uploaded ");
     } else {
       Fluttertoast.showToast(msg: json.decode(Response.body)["message"]);
       isLoading = false;
