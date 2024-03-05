@@ -34,11 +34,7 @@ class JobListCard extends StatelessWidget {
                 for (var data in homeCtrl.joblist)
                   if (data["status"]["name"] == "initiated")
                     InkWell(
-                      onTap: () {
-                        Get.to(() => weightScreen(
-                              id: data["id"],
-                            ));
-                      },
+                      onTap: () {},
                       child: JobSheetCard(
                         JobStatus: 0,
                         jobData: data,
