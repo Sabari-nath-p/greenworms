@@ -88,7 +88,7 @@ class _JobScreenState extends State<JobScreen> {
                       print(data["status"]);
                       print(data["stage"]);
                       //Get.to(()=> MaterialScreen(id: data["id"].toString(),));
-                      if (data["TrackingStatus"] == null) {
+                      if (data["TrackingStatus"] == "accepted") {
                         Get.to(() => weightScreen(
                               id: data["id"].toString(),
                             ));
