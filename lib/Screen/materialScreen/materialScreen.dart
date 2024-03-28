@@ -19,6 +19,8 @@ class MaterialScreen extends StatelessWidget {
   String id;
   MaterialScreen({super.key, required this.id});
   materialScreenController mctrl = Get.put(materialScreenController());
+
+  ///Users/reemasalam/Desktop/S5/DM/greenworms/lib/Screen/materialScreen/materialScreen.dart
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -45,7 +47,7 @@ class MaterialScreen extends StatelessWidget {
                 height: 2.h,
               ),
               Container(
-                width: 95.w,
+               // width: 95.w,
                 height: 3.5.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
@@ -62,8 +64,8 @@ class MaterialScreen extends StatelessWidget {
               ),
               SizedBox(height: 1.5.h),
               Container(
-                width: 80.w,
-                height: 5.5.h,
+                //width: 80.w,
+                height: 8.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
                 ),
@@ -248,7 +250,7 @@ class MaterialScreen extends StatelessWidget {
                 margin: EdgeInsets.only(left: 7.36.w),
                 child: ElevatedButton(
                   onPressed: () async {
-                    if (mctrl.materialimage.length > 2) {
+                    if (mctrl.materialimage.length >= 2) {
                       mctrl.isLoading = true;
                       mctrl.update();
                       Position pos = await determinePosition();
@@ -261,7 +263,7 @@ class MaterialScreen extends StatelessWidget {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromRGBO(3, 97, 99, 1),
+                    backgroundColor: Color.fromRGBO(3, 97, 99, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.10.w),
                       side: BorderSide(

@@ -44,7 +44,7 @@ class collectionScreen extends StatelessWidget {
                 height: 2.h,
               ),
               Container(
-                width: 40.w,
+               // width: 45.w,
                 height: 3.5.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
@@ -59,15 +59,15 @@ class collectionScreen extends StatelessWidget {
                       letterSpacing: -0.01.w),
                 ),
               ),
-              SizedBox(height: 1.5.h),
+              SizedBox(height: 1.h),
               Container(
                 width: 79.47.w,
-                height: 5.23.h,
+                height: 8.23.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
                 ),
                 child: Text(
-                  ' വണ്ടിയിൽ വേസ്റ്റ് കയറ്റിയതിന്റെ ഫോട്ടോ എടുത്തു \n അപ്‌ലോഡ് ചെയ്യുക',
+                  ' വണ്ടിയിൽ വേസ്റ്റ് കയറ്റിയതിന്റെ ഫോട്ടോ എടുത്തു അപ്‌ലോഡ് ചെയ്യുക',
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 10.88.sp,
@@ -124,7 +124,7 @@ class collectionScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              SizedBox(height: 4.82.h),
+              SizedBox(height: 3.h),
               Container(
                 width: 60.w,
                 height: 3.h,
@@ -145,13 +145,13 @@ class collectionScreen extends StatelessWidget {
               Container(
                   width: 83.68.w,
                   height: 12.82.h,
-                  margin: EdgeInsets.only(left: 8.w),
+                  margin: EdgeInsets.only(left: 6.w),
                   child: InkWell(
                       child: Image.asset('assets/image/upload.png'),
                       onTap: () async {
-                        if (cctrl.collectimage.length < 4) {
+                        if (cctrl.collectimage.length <= 4) {
                           final ImagePicker picker = ImagePicker();
-
+          
                           final data = await picker.pickImage(
                               source: ImageSource.camera);
                           if (data != null) {
@@ -248,19 +248,19 @@ class collectionScreen extends StatelessWidget {
                 margin: EdgeInsets.only(left: 7.36.w),
                 child: ElevatedButton(
                   onPressed: () async {
-                    if (cctrl.collectimage.length > 2) {
+                    if (cctrl.collectimage.length >= 2) {
                       cctrl.isLoading = true;
                       cctrl.update();
                       Position pos = await determinePosition();
                       cctrl.pos = pos;
-
+          
                       cctrl.uploadImage(id);
                     } else {
                       Fluttertoast.showToast(msg: "Please add atleast 2 image");
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromRGBO(3, 97, 99, 1),
+                    backgroundColor: Color.fromRGBO(3, 97, 99, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.10.w),
                       side: BorderSide(

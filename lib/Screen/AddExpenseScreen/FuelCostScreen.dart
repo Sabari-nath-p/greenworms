@@ -8,13 +8,23 @@ import 'package:greenworms/Screen/ExpenseScreen/controller.dart';
 import 'package:greenworms/Screen/homeScreen/controller.dart';
 import 'package:sizer/sizer.dart';
 
-class FuelCostScreen extends StatelessWidget {
+class FuelCostScreen extends StatefulWidget {
   String type;
   FuelCostScreen({super.key, required this.type});
 
   @override
+  State<FuelCostScreen> createState() => _FuelCostScreenState();
+}
+
+class _FuelCostScreenState extends State<FuelCostScreen> {
+  
+
+  @override
   Widget build(BuildContext context) {
-    return SafeArea(
+    return RefreshIndicator(
+      onRefresh: () async{
+        
+      },
       child: Scaffold(
         //  floatingActionButtonLocation: FloatingActionButtonLocation.miniEndTop,
         floatingActionButton: CircleAvatar(
@@ -26,7 +36,7 @@ class FuelCostScreen extends StatelessWidget {
                 showDialog(
                     context: context,
                     builder: (context) => AddExpensePage(
-                          type: type,
+                          type: widget.type,
                         ));
               },
               child: Icon(Icons.add,
@@ -58,7 +68,7 @@ class FuelCostScreen extends StatelessWidget {
                     width: 2.36.w,
                   ),
                   Text(
-                    type
+                    widget.type
                         .replaceAll("_", " ")
                         .toString()
                         .capitalizeFirst
@@ -80,7 +90,7 @@ class FuelCostScreen extends StatelessWidget {
                     children: [
                       if (_.ExpenseList != null)
                         for (var data in _.ExpenseList["data"])
-                          if (data["type"] == type)
+                          if (data["type"] == widget.type)
                             Summarycard(
                               expenseData: data,
                             ),

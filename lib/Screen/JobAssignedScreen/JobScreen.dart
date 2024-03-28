@@ -25,110 +25,123 @@ class JobScreen extends StatefulWidget {
 class _JobScreenState extends State<JobScreen> {
   homeController jctrl = Get.put(homeController());
   TextEditingController searchController = TextEditingController();
+  Future<void> _refreshJobs() async {
+    
+    //print('Refreshing jobs...');
+   
+    setState(() {
+     
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
     return SafeArea(child: Scaffold(
       body: GetBuilder<homeController>(builder: (_) {
-        return SingleChildScrollView(
-          child: Column(
-            children: [
-              StatusBar(),
-              SizedBox(
-                height: 2.8.h,
-              ),
-              Padding(
-                padding: EdgeInsets.only(left: 2.w),
-                child: SizedBox(
-                  width: 92.05.w,
-                  height: 5.8.h,
-                  child: TextFormField(
-                    controller: searchController,
-                    onChanged: (value) {
-                      setState(() {});
-                    },
-                    keyboardType: TextInputType.emailAddress,
-                    textAlignVertical: TextAlignVertical.center,
-                    decoration: InputDecoration(
-                      prefixIcon: Icon(
-                        Icons.search,
-                        size: 5.6.w,
-                        color: Color(0xff036163),
-                      ),
-                      isDense: true,
-                      isCollapsed: true,
-                      hintText: ("Search by Job Id"),
-                      hintStyle: GoogleFonts.lexend(
-                        color: Color(0xff036163),
-                      ),
-                      border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(0.9.h),
-                        borderSide:
-                            BorderSide(color: Color(0xffD0D5DD), width: 0.15.h),
+        return RefreshIndicator(
+          onRefresh: _refreshJobs,
+          child: SingleChildScrollView(
+            physics: AlwaysScrollableScrollPhysics(),
+            child: Column(
+              children: [
+                StatusBar(),
+                SizedBox(
+                  height: 2.8.h,
+                ),
+                Padding(
+                  padding: EdgeInsets.only(left: 2.w),
+                  child: SizedBox(
+                    width: 92.05.w,
+                    height: 5.8.h,
+                    child: TextFormField(
+                      controller: searchController,
+                      onChanged: (value) {
+                        setState(() {});
+                      },
+                      keyboardType: TextInputType.emailAddress,
+                      textAlignVertical: TextAlignVertical.center,
+                      decoration: InputDecoration(
+                        prefixIcon: Icon(
+                          Icons.search,
+                          size: 5.6.w,
+                          color: Color(0xff036163),
+                        ),
+                        isDense: true,
+                        isCollapsed: true,
+                        hintText: ("Search by Job Id"),
+                        hintStyle: GoogleFonts.lexend(
+                          color: Color(0xff036163),
+                        ),
+                        border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(0.9.h),
+                          borderSide:
+                              BorderSide(color: Color(0xffD0D5DD), width: 0.15.h),
+                        ),
                       ),
                     ),
                   ),
                 ),
-              ),
-              SizedBox(height: 2.5.h),
-              for (var data in jctrl.joblist)
-                if (jctrl.jStatus == 0 &&
-                    data["status"]["name"] == "initiated" &&
-                    data["id"].toString().contains(searchController.text))
-                  JobSheetCard(
-                    JobStatus: 0,
-                    jobData: data,
-                  )
-                else if (jctrl.jStatus == 1 &&
-                    (data["status"]["name"] == "accepted" ||
-                        data["status"]["name"] == "in_progress") &&
-                    data["id"].toString().contains(searchController.text))
-                  InkWell(
-                    onTap: () async {
-                      print(data["status"]);
-                      print(data["stage"]);
-                      //Get.to(()=> MaterialScreen(id: data["id"].toString(),));
-                      if (data["TrackingStatus"] == "accepted") {
-                        Get.to(() => weightScreen(
-                              id: data["id"].toString(),
-                            ));
-                      } else if (data["TrackingStatus"] == "stage_1") {
-                        Get.to(() => collectionScreen(
-                              id: data["id"].toString(),
-                            ));
-                      } else if (data["TrackingStatus"] == "stage_2") {
-                        Get.to(() => enterScreen(
-                              id: data["id"].toString(),
-                            ));
-                      } else if (data["TrackingStatus"] == "stage_3") {
-                        Get.to(() => MaterialScreen(
-                              id: data["id"].toString(),
-                            ));
-                      } else {
-                        Get.to(
-                            () => overviewScreen(jobid: data["id"].toString()));
-                      }
-                    },
-                    child: JobSheetCard(
-                      JobStatus: 1,
+                SizedBox(height: 2.5.h),
+                for (var data in jctrl.joblist)
+                  if (jctrl.jStatus == 0 &&
+                      data["status"]["name"] == "initiated" &&
+                      data["id"].toString().contains(searchController.text))
+                    JobSheetCard(
+                      JobStatus: 0,
                       jobData: data,
-                    ),
-                  )
-                else if (jctrl.jStatus == 2 &&
-                    data["status"]["name"] == "completed" &&
-                    data["id"].toString().contains(searchController.text))
-                  InkWell(
-                    onTap: () {
-                      Get.to(() => overviewScreen(
-                            jobid: data["id"].toString(),
-                          ));
-                    },
-                    child: JobSheetCard(
-                      JobStatus: 2,
-                      jobData: data,
-                    ),
-                  )
-            ],
+                    )
+                  else if (jctrl.jStatus == 1 &&
+                      (data["status"]["name"] == "accepted" ||
+                          data["status"]["name"] == "in_progress") &&
+                      data["id"].toString().contains(searchController.text))
+                    InkWell(
+                      onTap: () async {
+                        print(data["status"]);
+                        print(data["stage"]);
+                        //Get.to(()=> MaterialScreen(id: data["id"].toString(),));
+                        if (data["TrackingStatus"] == "accepted") {
+                          Get.to(() => weightScreen(
+                                id: data["id"].toString(),
+                              ));
+                        } else if (data["TrackingStatus"] == "stage_1") {
+                          Get.to(() => collectionScreen(
+                                id: data["id"].toString(),
+                              ));
+                        } else if (data["TrackingStatus"] == "stage_2") {
+                          Get.to(() => enterScreen(
+                                id: data["id"].toString(),
+                              ));
+                        } else if (data["TrackingStatus"] == "stage_3") {
+                          Get.to(() => MaterialScreen(
+                                id: data["id"].toString(),
+                              ));
+                        } else {
+                          Get.to(
+                              () => overviewScreen(jobid: data["id"].toString()));
+                        }
+                      },
+                      child: JobSheetCard(
+                        JobStatus: 1,
+                        jobData: data,
+                      ),
+                    )
+                  else if (jctrl.jStatus == 2 &&
+                      data["status"]["name"] == "completed" &&
+                      data["id"].toString().contains(searchController.text))
+                    InkWell(
+                      onTap: () {
+                        Get.to(() => overviewScreen(
+                              jobid: data["id"].toString(),
+                            ));
+                      },
+                      child: JobSheetCard(
+                        JobStatus: 2,
+                        jobData: data,
+                      ),
+                    )
+              ],
+            ),
           ),
         );
       }),

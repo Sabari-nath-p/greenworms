@@ -178,11 +178,10 @@ class HPrimaryCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  elevation: 0,
+                  elevation: 0, backgroundColor: Color.fromRGBO(3, 97, 99, 1),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  primary: Color.fromRGBO(3, 97, 99, 1),
                 ),
                 child: Text(
                   'Accept',
@@ -209,11 +208,10 @@ class HPrimaryCard extends StatelessWidget {
               child: ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
-                  elevation: 0,
+                  elevation: 0, backgroundColor: Color.fromRGBO(0, 0, 0, 0),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(5),
                   ),
-                  primary: Color.fromRGBO(0, 0, 0, 0),
                 ),
                 child: Text(
                   'Decline',

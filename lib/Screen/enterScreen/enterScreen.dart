@@ -47,13 +47,13 @@ class enterScreen extends StatelessWidget {
                 height: 2.h,
               ),
               Container(
-                width: 50.w,
+              //  width: 50.w,
                 height: 3.5.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
                 ),
                 child: Text(
-                  'Enter Weight',
+                  'Enter Net Weight',
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 16.66.sp,
@@ -64,13 +64,13 @@ class enterScreen extends StatelessWidget {
               ),
               SizedBox(height: 1.5.h),
               Container(
-                width: 98.w,
+              //  width: 98.w,
                 height: 3.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
                 ),
                 child: Text(
-                  'കാലി തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ \n രേഖപ്പെടുത്തുക',
+                  'കാലി തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ രേഖപ്പെടുത്തുക',
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 10.00.sp,
@@ -129,13 +129,13 @@ class enterScreen extends StatelessWidget {
               ),
               SizedBox(height: 3.h),
               Container(
-                width: 26.68.w,
+               // width: 26.68.w,
                 height: 3.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
                 ),
                 child: Text(
-                  ' Enter Weight',
+                  'Gross Weight',
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 11.66.sp,
@@ -300,7 +300,7 @@ class enterScreen extends StatelessWidget {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromRGBO(3, 97, 99, 1),
+                    backgroundColor: Color.fromRGBO(3, 97, 99, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.10.w),
                       side: BorderSide(

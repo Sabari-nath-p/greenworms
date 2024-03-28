@@ -42,7 +42,7 @@ class weightScreen extends StatelessWidget {
                 height: 2.h,
               ),
               Container(
-                width: 40.w,
+                width: 49.w,
                 height: 3.5.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
@@ -60,12 +60,12 @@ class weightScreen extends StatelessWidget {
               SizedBox(height: 1.5.h),
               Container(
                 width: 81.31.w,
-                height: 2.5.h,
+                height: 5.5.h,
                 margin: EdgeInsets.only(
                   left: 7.4.w,
                 ),
                 child: Text(
-                  "കാലി തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ n\ രേഖപ്പെടുത്തുക ",
+                  "കാലി തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ \n രേഖപ്പെടുത്തുക ",
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 10.88.sp,
@@ -130,7 +130,7 @@ class weightScreen extends StatelessWidget {
                   left: 7.4.w,
                 ),
                 child: Text(
-                  ' Enter Weight',
+                  ' Tare Weight',
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 11.66.sp,
@@ -139,7 +139,7 @@ class weightScreen extends StatelessWidget {
                       letterSpacing: -0.01.w),
                 ),
               ),
-              SizedBox(height: 2.5.h),
+              SizedBox(height: 1.h),
               Container(
                 width: 84.21.w,
                 height: 6.h,
@@ -183,7 +183,7 @@ class weightScreen extends StatelessWidget {
                   left: 7.14.w,
                 ),
                 child: Text(
-                  ' തൂക്കഷീറ്റ് ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക ',
+                  ' ഫോട്ടോ അപ്‌ലോഡ് ചെയ്യുക ',
                   style: TextStyle(
                       fontFamily: 'Lexend',
                       fontSize: 10.88.sp,
@@ -201,7 +201,7 @@ class weightScreen extends StatelessWidget {
                       child: Image.asset('assets/image/upload.png'),
                       onTap: () async {
                         final ImagePicker picker = ImagePicker();
-
+          
                         sctrl.weightimage =
                             await picker.pickImage(source: ImageSource.camera);
                         sctrl.update();
@@ -233,7 +233,7 @@ class weightScreen extends StatelessWidget {
                             context: context,
                             builder: (ctx) => Container(
                                   //   alignment: Alignment.center,
-
+          
                                   margin:
                                       EdgeInsets.symmetric(horizontal: 4.2.w),
                                   child: Material(
@@ -299,7 +299,7 @@ class weightScreen extends StatelessWidget {
                     }
                   },
                   style: ElevatedButton.styleFrom(
-                    primary: Color.fromRGBO(3, 97, 99, 1),
+                    backgroundColor: Color.fromRGBO(3, 97, 99, 1),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(2.10.w),
                       side: BorderSide(

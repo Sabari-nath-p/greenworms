@@ -139,7 +139,7 @@ class overviewScreen extends StatelessWidget {
                                 Container(
                                   width: 89.47.w,
                                   height: 18.9.h,
-                                  margin: EdgeInsets.only(left: 3.w),
+                                  margin: EdgeInsets.only(left: 3.w,top: 1.h),
                                   child: Image.network(data["imgUrl"]),
                                 ),
                             SizedBox(height: 1.5.h),
@@ -151,7 +151,7 @@ class overviewScreen extends StatelessWidget {
                               ),
 
                               child: Text(
-                                'വണ്ടിയിൽ വേസ്റ്റ് കയറ്റിയതിന്റെ ഫോട്ടോ എടുത്തുഅപ്‌ലോഡ് ചെയ്യുക',
+                                'വണ്ടിയിൽ വേസ്റ്റ് കയറ്റിയതിന്റെ ഫോട്ടോ ',
                                 style: TextStyle(
                                   fontFamily: 'Lexend',
                                   fontSize: 9.88.sp,
@@ -163,12 +163,12 @@ class overviewScreen extends StatelessWidget {
 
                             // SizedBox(height:.5.h),
 
-                            if (mctrl.data.length > 4)
+                            if (mctrl.data.length >=4 )
                               for (var data in mctrl.data[3]["images"])
                                 Container(
                                   width: 89.47.w,
                                   height: 18.9.h,
-                                  margin: EdgeInsets.only(left: 3.w),
+                                  margin: EdgeInsets.only(left: 3.w,top: 1.h),
                                   child: Image.network(data["imgUrl"]),
                                 ),
 
@@ -180,7 +180,7 @@ class overviewScreen extends StatelessWidget {
                                 left: 7.4.w,
                               ),
                               child: Text(
-                                'തൂക്കം അളന്നതിനു ശേഷം ഇവിടെ രേഖപ്പെടുത്തുക ',
+                                'വേസ്റ്റ് എടുത്തു ശേഷം വണ്ടിയുടെ ഭാരം  ',
                                 style: TextStyle(
                                   fontFamily: 'Lexend',
                                   fontSize: 9.18.sp,
@@ -224,13 +224,30 @@ class overviewScreen extends StatelessWidget {
                                   ),
                                 ),
                               ),
+                              SizedBox(height: 1.h,),
+                              Container(
+                              width: 90.47.w,
+                              height: 2.8.h,
+                              margin: EdgeInsets.only(
+                                left: 7.4.w,
+                              ),
+                              child: Text(
+                                'തൂക്കഷീറ്റ് ഫോട്ടോ   ',
+                                style: TextStyle(
+                                  fontFamily: 'Lexend',
+                                  fontSize: 9.18.sp,
+                                  color: Color.fromRGBO(52, 64, 84, 1),
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              ),
+                            ),
                             SizedBox(height: 2.3.h),
                             if (mctrl.data.length > 5)
                               for (var data in mctrl.data[4]["images"])
                                 Container(
                                   width: 89.47.w,
                                   height: 18.9.h,
-                                  margin: EdgeInsets.only(left: 3.w),
+                                  margin: EdgeInsets.only(left: 3.w,top: 1.h),
                                   child: Image.network(data["imgUrl"]),
                                 ),
 
@@ -243,7 +260,7 @@ class overviewScreen extends StatelessWidget {
                                 left: 7.4.w,
                               ),
                               child: Text(
-                                'മെറ്റീരിയൽ റിക്കവറി പോയിന്റിൽ ഇറക്കിയതിന്റെ ഫോട്ടോ ',
+                                'മെറ്റീരിയൽ MRF എത്തിയതിന്റെ ഫോട്ടോ  ',
                                 style: TextStyle(
                                   fontFamily: 'Lexend',
                                   fontSize: 9.18.sp,
@@ -258,7 +275,7 @@ class overviewScreen extends StatelessWidget {
                                 Container(
                                   width: 89.47.w,
                                   height: 18.9.h,
-                                  margin: EdgeInsets.only(left: 3.w),
+                                  margin: EdgeInsets.only(left: 3.w,top: 1.h),
                                   child: Image.network(data["imgUrl"]),
                                 ),
                           ],
@@ -279,7 +296,7 @@ class overviewScreen extends StatelessWidget {
                             Get.back();
                           },
                           style: ElevatedButton.styleFrom(
-                            primary: Color.fromRGBO(3, 97, 99, 1),
+                            backgroundColor: Color.fromRGBO(3, 97, 99, 1),
                             shape: RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(2.10.w),
                               side: BorderSide(

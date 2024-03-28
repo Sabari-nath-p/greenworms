@@ -4,15 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:fluttertoast/fluttertoast.dart';
 import 'package:get/get.dart';
 import 'package:greenworms/main.dart';
+//import 'package:greenwormsadminpanel/main.dart';
 import 'package:http/http.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:transportcordinate/main.dart';
 
 class ProfileController extends GetxController {
   String name = "";
-  TextEditingController currentPass = TextEditingController();
-  TextEditingController newPass = TextEditingController();
-  TextEditingController confirmPass = TextEditingController();
-
+ 
   getdata() async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     token = pref.getString('token').toString();
@@ -55,31 +54,5 @@ class ProfileController extends GetxController {
     }
   }
 
-  void getPass() async {
-    final Response = await post(
-      Uri.parse(baseUrl + "auth/change-password"),
-      body: {
-        "current_password": currentPass.text.trim(),
-        "new_password": newPass.text.trim(),
-        "confirm_password": confirmPass.text.trim()
-      },
-      headers: {
-        'contentType': 'application/json',
-        "Authorization": "Bearer $token"
-      },
-    );
-    var cpData = json.decode(Response.body);
-    if (Response.statusCode == 201) {
-      Get.back();
-      Fluttertoast.showToast(
-        msg: cpData["message"],
-      );
-
-      update();
-    } else {
-      Fluttertoast.showToast(
-        msg: cpData["message"],
-      );
-    }
-  }
+  
 }
